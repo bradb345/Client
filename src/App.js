@@ -1,4 +1,9 @@
 import React from 'react'
+import Main from './Main.js'
+import NavBar from './NavBar.js'
+import SearchBar from './SearchBar.js'
+import UserCard from './UserCard.js'
+import UserCardFeed from './Feed.js'
 
 function App() {
   React.useEffect(() => {
@@ -10,7 +15,14 @@ function App() {
     getData()
   })
 
-  return <h1>Hello World</h1>
+  return (
+    <>
+      <NavBar/>
+      {/* <Main/>
+    <UserCard/> */}
+      <UserCardFeed/>
+    </>
+  )
 }
 
 export default App
