@@ -1,9 +1,28 @@
-// import ProjectCard from './components/projects/ProjectCard.js'
+import React from 'react'
 
+import { getAllProjects } from './components/lib/api'
 
-// function Main() {
+function ProjectIndex() {
 
-// }
+  const [projects, setProjects] = React.useState(null)
 
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await getAllProjects()
+        setProjects(response.data)
+        
+        console.log('working')
+      } catch (error) {
+        console.log('something went wrong')
+      }
+    }
+    getData()
+  },[])
 
-// export default Main 
+  return (
+    <h1>Hello</h1>
+  )
+}
+
+export default ProjectIndex
