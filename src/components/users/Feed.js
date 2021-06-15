@@ -1,5 +1,5 @@
 import UserCard from './UserCard.js'
-import ProjectCard from './ProjectCard.js'
+import ProjectCard from '../projects/ProjectCard.js'
 
 function UserCardFeed() {
 
@@ -9,9 +9,6 @@ function UserCardFeed() {
         <UserCard/>
       </div>
       <div className="userfeed">
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
         <ProjectCard/>
         <ProjectCard/>
         <ProjectCard/>
