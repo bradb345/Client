@@ -18,7 +18,7 @@ function Login() {
     try {
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/feed')
+      history.push('/')
     } catch (err) {
       setIsError(true)
     }
@@ -26,7 +26,7 @@ function Login() {
 
   return (
 
-    <div className="container">
+    <div className="containerLogin">
       <form
         className="column is-half is-offset-one-quarter"
         onSubmit={handleSubmit}

@@ -1,16 +1,24 @@
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import AuthPage from './components/auth/AuthPage.js'
 import NavBar from './components/common/NavBar.js'
 import UserCardFeed from './components/users/Feed.js'
+import AuthPage from './components/auth/AuthPage.js'
 
 function App() {
   
+
   return (
-    <>
-      <AuthPage/>
-      <NavBar/>
-      <UserCardFeed/>
-    </>
+    <Router>
+      <Switch>
+        <Route path="/auth" component={AuthPage} />
+        <>
+          <NavBar/>
+          <Route path="/" component={UserCardFeed} >
+            <UserCardFeed/>
+          </Route>
+        </>
+      </Switch>
+    </Router>
   )
 }
 
