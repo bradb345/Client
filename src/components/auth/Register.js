@@ -1,8 +1,8 @@
 import React from 'react'
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../hooks/useForm'
 import { useHistory } from 'react-router'
-import { registerUser, loginUser } from '../../lib/api'
-import { setToken } from '../../lib/auth'
+import { registerUser, loginUser } from '../lib/api'
+import { setToken } from '../lib/auth'
 
 function Register() {
 
