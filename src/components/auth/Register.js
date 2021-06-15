@@ -1,8 +1,8 @@
 import React from 'react'
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../hooks/useForm'
 import { useHistory } from 'react-router'
-import { registerUser, loginUser } from '../../lib/api'
-import { setToken } from '../../lib/auth'
+import { registerUser, loginUser } from '../lib/api'
+import { setToken } from '../lib/auth'
 
 function Register() {
 
@@ -21,7 +21,7 @@ function Register() {
       await registerUser(formdata)
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/feed')
+      history.push('/')
     } catch (err) {
       setFormErrors(err.response.data.errors)
     }
@@ -31,7 +31,7 @@ function Register() {
   return (
 
 
-    <div className="container ">
+    <div className="containerRegister">
       <form
         className="column is-half is-offset-one-quarter "
         onSubmit={handleSubmit}

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useHistory } from 'react-router'
-import { loginUser } from '../../lib/api'
-import { setToken } from '../../lib/auth'
-import { useForm } from '../../hooks/useForm'
+import { loginUser } from '../lib/api'
+import { setToken } from '../lib/auth'
+import { useForm } from '../hooks/useForm'
 
 function Login() {
   const history = useHistory()
@@ -18,7 +18,7 @@ function Login() {
     try {
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/feed')
+      history.push('/')
     } catch (err) {
       setIsError(true)
     }
@@ -26,7 +26,7 @@ function Login() {
 
   return (
 
-    <div className="container">
+    <div className="containerLogin">
       <form
         className="column is-half is-offset-one-quarter"
         onSubmit={handleSubmit}
