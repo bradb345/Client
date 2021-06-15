@@ -1,9 +1,6 @@
 import React from 'react'
-import Main from './Main.js'
-import NavBar from './NavBar.js'
-import SearchBar from './SearchBar.js'
-import UserCard from './UserCard.js'
-import UserCardFeed from './Feed.js'
+import NavBar from './components/common/NavBar.js'
+import UserCardFeed from './components/users/Feed.js'
 
 function App() {
   React.useEffect(() => {
@@ -18,8 +15,6 @@ function App() {
   return (
     <>
       <NavBar/>
-      {/* <Main/>
-    <UserCard/> */}
       <UserCardFeed/>
     </>
   )

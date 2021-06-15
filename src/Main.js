@@ -1,12 +1,12 @@
-import ProjectCard from './ProjectCard.js'
+// import ProjectCard from './components/projects/ProjectCard.js'
 
 
-function Main() {
-  return (
-    <>
-      <ProjectCard/>
-    </>
-  )
-}
+// function Main() {
+//   return (
+//     <>
+//       <ProjectCard/>
+//     </>
+//   )
+// }
 
-export default Main 
+// export default Main 
