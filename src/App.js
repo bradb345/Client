@@ -18,8 +18,8 @@ function App() {
   return (
     <>
       <NavBar/>
-      {/* <Main/>
-    <UserCard/> */}
+      {/* <Main/> */}
+      {/* <UserCard/> */}
       <UserCardFeed/>
     </>
   )

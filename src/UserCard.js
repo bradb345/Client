@@ -7,7 +7,7 @@ function UserCard() {
     <>
       <div className="user-card-container">
         <div className="user-profile-image">
-          <img src= "https://lh3.googleusercontent.com/proxy/Glk_2PWJL-eKp62U0-DaJLlpoYwgiZ2qDRYbJgDSpd0j-TqQ_5RQv5EcLkxl7P8x0HlEvDZNV4iNA3QeZbSzBKV1WCXmqzfM0HOCeMFU8SVNq6p-GIXAsxDBB2l4cEr9skNcFzieVbkMZBfbflEcGPKTr0Dnen4FmXx1"/>
+          <img src= "https://i.pinimg.com/originals/24/69/64/2469640cf7511b12a1a5933219cc68b1.png"/>
         </div>
         <div className="user-deets-container">
           <div className="user-title">
