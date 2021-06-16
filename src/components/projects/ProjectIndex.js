@@ -24,29 +24,27 @@ function ProjectIndex() {
     getData()
   }, [searchTerm])
 
-  // const filterProjects = projects.filter(project => {
-  //   return (
-  //     project.projectName.toLowerCase().includes(searchTerm)
-  //   )
-  // })
-
-
+  const filterProjects = projects.filter(project => {
+    return (
+      project.projectName.toLowerCase().includes(searchTerm)
+    )
+  })
 
   return (
     <>
       <NavBar setSearchTerm={setSearchTerm}/>
-
-      { projects && 
-        projects.map((project) => (
+      <div className="ProjectIndex-Container">
+        { projects && 
+        filterProjects.map((project) => (
           <ProjectCard
             key={project.id}
             url={project.url}
             projectName={project.projectName}
-
           />
 
         ))}
   
+      </div>
     </>
   )
 
