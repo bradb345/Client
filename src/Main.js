@@ -1,9 +1,11 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 import { getAllProjects } from './components/lib/api'
 
-function ProjectIndex() {
+function Main() {
 
+  const { projectId } = useParams()
   const [projects, setProjects] = React.useState(null)
 
   React.useEffect(() => {
@@ -13,6 +15,9 @@ function ProjectIndex() {
         setProjects(response.data)
         
         console.log('working')
+        console.log(response.data)
+        console.log(projectId)
+        console.log(projects)
       } catch (error) {
         console.log('something went wrong')
       }
@@ -20,9 +25,10 @@ function ProjectIndex() {
     getData()
   },[])
 
+
   return (
-    <h1>Hello</h1>
+    <h1>Hello!!!</h1>
   )
 }
 
-export default ProjectIndex
+export default Main 

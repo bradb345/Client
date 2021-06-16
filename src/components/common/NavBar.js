@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function NavBar() {
+function NavBar({ setSearchTerm }) {
 
 
 
@@ -21,7 +21,7 @@ function NavBar() {
           <li className="item button secondary"><a href="#">SignUp</a></li>
           <li className="toggle"><span className="bars"></span></li>
         </ul>
-        <SearchBar />
+        <SearchBar setSearchTerm ={setSearchTerm} />
       </nav>
     </>
   )
