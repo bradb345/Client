@@ -22,13 +22,14 @@ function ProjectCard({ projectName, url }) {
                 <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> Project Type</a></li>
               </ul>
               <br/>
-              <hr/>
-              <br/>
+              <span className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp}/> Like</a></li></span>
+              {/* <hr/>
+              {/* <br/>
               <ul className="site-links">
                 <li><a href='#'><FontAwesomeIcon icon={faLink}/> LinkedIn</a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faCodeBranch}/> GitHub</a></li>
                 <span className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp}/> Like</a></li></span>
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
