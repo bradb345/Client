@@ -15,16 +15,17 @@ function App() {
   return (
     <Router>
       <Switch>
-        
-        <Route exact path="/" component={ProjectIndex}>
-          <ProjectIndex searchTerm={searchTerm} />
-        </Route>
-        
+
         <Route path="/auth" component={AuthPage}>
           <AuthPage isLoginForm={isLoginForm} setIsLoginForm={setIsLoginForm} />
         </Route>
+
         <>
           <NavBar setIsLoginForm={setIsLoginForm} setSearchTerm={setSearchTerm} />
+
+          <Route exact path="/" component={ProjectIndex}>
+            <ProjectIndex searchTerm={searchTerm}  />
+          </Route>
         </>
       </Switch>
     </Router>
