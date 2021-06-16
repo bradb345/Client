@@ -1,0 +1,57 @@
+.outer-box {
+  height: 100vh;
+  padding: 300px;
+  background-image: linear-gradient(black, grey);
+}
+
+.box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.color-box {
+  background-color: rgb(225, 225, 225);
+  padding: 20px;
+  // min-height: 600px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.color-box a {
+  color: rgb(0, 60, 255);
+}
+
+
+.containerAuth {
+  display: flex;
+  justify-content: center;
+  
+}
+
+
+
+.containerAuth  form input {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.containerAuth  input {
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.containerAuth  button {
+  height: 25px;
+  width: 300px;
+  margin-top: 15px;
+  border-radius: 30rem;
+}
+
+.containerAuth  label {
+  margin-top: 5px;
+}
