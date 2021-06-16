@@ -6,7 +6,7 @@ import { getCurrentUserId, isAuthenticated, removeToken } from '../lib/auth'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function NavBar({ setIsLoginForm,setSearchTerm }) {
+function NavBar({  setSearchTerm, setIsLoginForm }) {
 
 
   const history = useHistory()
@@ -16,6 +16,7 @@ function NavBar({ setIsLoginForm,setSearchTerm }) {
 
     history.push('/auth')
     setIsLoginForm(false)
+    
   }
 
   const handleLogout = () => {
@@ -47,7 +48,7 @@ function NavBar({ setIsLoginForm,setSearchTerm }) {
           }
 
         </ul>
-        <SearchBar setSearchTerm ={setSearchTerm} />
+        <SearchBar setSearchTerm={setSearchTerm} />
       </nav>
     </>
   )

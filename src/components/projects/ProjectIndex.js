@@ -40,7 +40,9 @@ function ProjectIndex() {
         projects.map((project) => (
           <ProjectCard
             key={project.id}
-            url={project.projectName}
+            url={project.url}
+            projectName={project.projectName}
+
           />
 
         ))}

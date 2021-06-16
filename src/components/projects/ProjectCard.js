@@ -18,7 +18,7 @@ function ProjectCard({ projectName, url }) {
 
             <div className="project-info">
               <ul className="user-links">
-                <li><a href="#"><FontAwesomeIcon icon={faUser}/> UserName: Craig </a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faUser}/> Project Name: {projectName} </a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> Project Type</a></li>
               </ul>
               <br/>
