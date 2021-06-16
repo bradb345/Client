@@ -1,7 +1,9 @@
 import UserCard from './UserCard.js'
 import ProjectCard from '../projects/ProjectCard.js'
 
-function UserCardFeed() {
+function UserFeed() {
+
+  
 
   return (
     <div className="userpage-container">
@@ -10,11 +12,9 @@ function UserCardFeed() {
       </div>
       <div className="userfeed">
         <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
       </div>
     </div>
   )
 }
 
-export default UserCardFeed
+export default UserFeed

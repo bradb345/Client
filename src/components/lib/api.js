@@ -24,3 +24,17 @@ export function deleteSingleProjectProject(projectId) {
   return axios.delete(`${baseUrl}/projects/${projectId}`, headers())
 
 }
+
+//* Auth Requests
+
+// .login
+
+export function loginUser(formdata) {
+  return axios.post(`${baseUrl}/auth/login/`, formdata)
+}
+
+// .register
+
+export function registerUser(formdata) {
+  return axios.post(`${baseUrl}/auth/register/`, formdata)
+}

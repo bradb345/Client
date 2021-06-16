@@ -1,4 +1,5 @@
 @import url("https://use.typekit.net/dem4hyl.css");
+@import "auth";
 
 
 * {
@@ -377,4 +378,13 @@ color:black;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.ProjectIndex-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color:black;
+
+
 }

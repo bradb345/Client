@@ -1,10 +1,10 @@
 import React from 'react'
 import { useHistory } from 'react-router'
-import { loginUser } from '../../lib/api'
-import { setToken } from '../../lib/auth'
-import { useForm } from '../../hooks/useForm'
+import { loginUser } from '../lib/api'
+import { setToken } from '../lib/auth'
+import { useForm } from '../hooks/useForm'
 
-function Login() {
+function Login({ setIsLoginForm }) {
   const history = useHistory()
   const [isError, setIsError] = React.useState(false)
   const { formdata, handleChange } = useForm({
@@ -18,19 +18,24 @@ function Login() {
     try {
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/feed')
+      history.push('/')
     } catch (err) {
       setIsError(true)
     }
   }
 
+  const handleClick = () => {
+    setIsLoginForm(false)
+  }
+
   return (
 
-    <div className="container">
+    <div className="containerAuth">
       <form
         className="column is-half is-offset-one-quarter"
         onSubmit={handleSubmit}
       >
+        <p>New user? <a onClick={handleClick}> Create an account</a></p>
         <div className="field">
           <label className="label">Email</label>
           <div className="control">

@@ -1,10 +1,10 @@
 import React from 'react'
-import { useForm } from '../../hooks/useForm'
+import { useForm } from '../hooks/useForm'
 import { useHistory } from 'react-router'
-import { registerUser, loginUser } from '../../lib/api'
-import { setToken } from '../../lib/auth'
+import { registerUser, loginUser } from '../lib/api'
+import { setToken } from '../lib/auth'
 
-function Register() {
+function Register({ setIsLoginForm }) {
 
   const history = useHistory()
   const { formdata, formErrors, setFormErrors, handleChange } = useForm({
@@ -21,21 +21,25 @@ function Register() {
       await registerUser(formdata)
       const res = await loginUser(formdata)
       setToken(res.data.token)
-      history.push('/feed')
+      history.push('/')
     } catch (err) {
       setFormErrors(err.response.data.errors)
     }
   }
 
+  const handleClick = () => {
+    setIsLoginForm(true)
+  }
 
   return (
 
 
-    <div className="container ">
+    <div className="containerAuth">
       <form
         className="column is-half is-offset-one-quarter "
         onSubmit={handleSubmit}
       >
+        <p>Already a user?<a onClick={handleClick}> Sign In</a></p>
         <div className="field">
           <label className="label" htmlFor="username">Username</label>
           <div className="control">
