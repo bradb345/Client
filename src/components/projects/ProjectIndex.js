@@ -34,7 +34,7 @@ function ProjectIndex() {
     <>
       <NavBar setSearchTerm={setSearchTerm}/>
       <div className="ProjectIndex-Container">
-        { projects && 
+        { projects &&
         filterProjects.map((project) => (
           <ProjectCard
             key={project.id}
@@ -43,7 +43,7 @@ function ProjectIndex() {
           />
 
         ))}
-  
+
       </div>
     </>
   )
@@ -51,3 +51,4 @@ function ProjectIndex() {
 }
 
 export default ProjectIndex
+
