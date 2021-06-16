@@ -1,6 +1,8 @@
 import { faCodeBranch, faUser, faThumbsUp, faDesktop, faLink } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import React from 'react'
+import { getAllProjects } from '../lib/api.js'
 
 function ProjectCard({ projectName, url, owner }) {
   return (
@@ -36,7 +38,6 @@ function ProjectCard({ projectName, url, owner }) {
       </div>
     </>
   )
-
 }
 
 export default ProjectCard

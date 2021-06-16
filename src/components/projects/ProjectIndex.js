@@ -58,3 +58,4 @@ function ProjectIndex({ searchTerm }) {
 }
 
 export default ProjectIndex
+
