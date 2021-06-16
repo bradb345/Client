@@ -1,7 +1,7 @@
-import UserCard from './UserCard.js'
-import ProjectCard from '../projects/ProjectCard.js'
+// import UserCard from './UserCard.js'
+// import ProjectCard from '../projects/ProjectCard.js'
 
-function UserFeed() {
+function UserFeed({ UserCard, ProjectCard }) {
 
   
 
