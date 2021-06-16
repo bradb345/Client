@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import { registerUser, loginUser } from '../lib/api'
 import { setToken } from '../lib/auth'
 
-function Register() {
+function Register({ setIsLogin }) {
 
   const history = useHistory()
   const { formdata, formErrors, setFormErrors, handleChange } = useForm({
@@ -27,15 +27,19 @@ function Register() {
     }
   }
 
+  const handleClick = () => {
+    setIsLogin(true)
+  }
 
   return (
 
 
-    <div className="containerRegister">
+    <div className="containerAuth">
       <form
         className="column is-half is-offset-one-quarter "
         onSubmit={handleSubmit}
       >
+        <p>Already a user?<a onClick={handleClick}> Sign In</a></p>
         <div className="field">
           <label className="label" htmlFor="username">Username</label>
           <div className="control">

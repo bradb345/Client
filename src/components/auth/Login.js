@@ -4,7 +4,7 @@ import { loginUser } from '../lib/api'
 import { setToken } from '../lib/auth'
 import { useForm } from '../hooks/useForm'
 
-function Login() {
+function Login({ setIsLogin }) {
   const history = useHistory()
   const [isError, setIsError] = React.useState(false)
   const { formdata, handleChange } = useForm({
@@ -24,13 +24,18 @@ function Login() {
     }
   }
 
+  const handleClick = () => {
+    setIsLogin(false)
+  }
+
   return (
 
-    <div className="containerLogin">
+    <div className="containerAuth">
       <form
         className="column is-half is-offset-one-quarter"
         onSubmit={handleSubmit}
       >
+        <p>New user? <a onClick={handleClick}> Create an account</a></p>
         <div className="field">
           <label className="label">Email</label>
           <div className="control">
