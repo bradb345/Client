@@ -1,7 +1,7 @@
 import UserCard from './UserCard.js'
 import ProjectCard from '../projects/ProjectCard.js'
 
-function UserCardFeed() {
+function UserFeed() {
 
   
 
@@ -17,4 +17,4 @@ function UserCardFeed() {
   )
 }
 
-export default UserCardFeed
+export default UserFeed

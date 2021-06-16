@@ -2,15 +2,14 @@ import { faCodeBranch, faUser, faThumbsUp, faDesktop, faLink } from '@fortawesom
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-function ProjectCard() {
-  
+function ProjectCard({ projectName, url }) {
   return (
     <>
       <div className="project-body">
         <div className="project-container">
           <div className="project-display">
             <iframe
-              src="https://www.stonesthrow.com/"
+              src={url}
               width="300px"
               height="300px"
               title="Project Name"
@@ -19,7 +18,7 @@ function ProjectCard() {
 
             <div className="project-info">
               <ul className="user-links">
-                <li><a href="#"><FontAwesomeIcon icon={faUser}/> UserName: {}</a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faUser}/> UserName: Craig </a></li>
                 <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> Project Type</a></li>
               </ul>
               <br/>
