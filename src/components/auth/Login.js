@@ -4,7 +4,7 @@ import { loginUser } from '../lib/api'
 import { setToken } from '../lib/auth'
 import { useForm } from '../hooks/useForm'
 
-function Login({ setIsLogin }) {
+function Login({ setIsLoginForm }) {
   const history = useHistory()
   const [isError, setIsError] = React.useState(false)
   const { formdata, handleChange } = useForm({
@@ -25,7 +25,7 @@ function Login({ setIsLogin }) {
   }
 
   const handleClick = () => {
-    setIsLogin(false)
+    setIsLoginForm(false)
   }
 
   return (

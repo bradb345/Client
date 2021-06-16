@@ -5,14 +5,17 @@ import UserCardFeed from './components/users/Feed.js'
 import AuthPage from './components/auth/AuthPage.js'
 
 function App() {
-  
+
+  const [isLoginForm, setIsLoginForm] = React.useState(true)
 
   return (
     <Router>
       <Switch>
-        <Route path="/auth" component={AuthPage} />
+        <Route path="/auth" component={AuthPage}>
+          <AuthPage isLoginForm={isLoginForm} setIsLoginForm={setIsLoginForm}/>
+        </Route> 
         <>
-          <NavBar/>
+          <NavBar setIsLoginForm={setIsLoginForm}/>
           <Route path="/" component={UserCardFeed} >
             <UserCardFeed/>
           </Route>

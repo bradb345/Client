@@ -4,7 +4,7 @@ import { useHistory } from 'react-router'
 import { registerUser, loginUser } from '../lib/api'
 import { setToken } from '../lib/auth'
 
-function Register({ setIsLogin }) {
+function Register({ setIsLoginForm }) {
 
   const history = useHistory()
   const { formdata, formErrors, setFormErrors, handleChange } = useForm({
@@ -28,7 +28,7 @@ function Register({ setIsLogin }) {
   }
 
   const handleClick = () => {
-    setIsLogin(true)
+    setIsLoginForm(true)
   }
 
   return (

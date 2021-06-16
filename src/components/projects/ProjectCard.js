@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function ProjectCard() {
+  
   return (
     <>
       <div className="project-body">

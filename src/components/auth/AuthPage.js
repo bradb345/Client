@@ -3,9 +3,9 @@ import Register from './Register'
 import Login from './Login'
 
 
-function AuthPage() {
+function AuthPage({ setIsLoginForm, isLoginForm }) {
 
-  const [isLogin, setIsLogin] = React.useState(true)
+  
 
   return (
 
@@ -13,9 +13,7 @@ function AuthPage() {
       <div className="box">
         <p>Project Expo</p>
         <div className="color-box">
-          { isLogin ? <Login setIsLogin={setIsLogin} /> : <Register setIsLogin={setIsLogin} />}
-          
-          
+          {isLoginForm ? <Login setIsLoginForm={setIsLoginForm} /> : <Register setIsLoginForm={setIsLoginForm} />}
         </div>
       </div>
     </div>
