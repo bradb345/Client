@@ -2,7 +2,7 @@ import { faCodeBranch, faUser, faThumbsUp, faDesktop, faLink } from '@fortawesom
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-function ProjectCard({ projectName, url }) {
+function ProjectCard({ projectName, url, owner }) {
   return (
     <>
       <div className="project-body">
@@ -19,7 +19,7 @@ function ProjectCard({ projectName, url }) {
             <div className="project-info">
               <ul className="user-links">
                 <li><a href="#"><FontAwesomeIcon icon={faUser}/> Project Name: {projectName} </a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> Project Type</a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> {owner}</a></li>
               </ul>
               <br/>
               <span className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp}/> Like</a></li></span>
