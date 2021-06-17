@@ -13,14 +13,9 @@ function ProjectIndex({ searchTerm }) {
       try {
         const response = await getAllProjects()
         setProjects(response.data)
-<<<<<<< HEAD
         // console.log(response.data)
         // console.log(response.data.map(project=>project.owner))
         // console.log(response.data.map(project=> project.projectName))
-=======
-        console.log(response.data)
-        console.log(response.data.map(project => project.projectName))
->>>>>>> development
       } catch (error) {
         setIsError(true)
       }
@@ -43,17 +38,6 @@ function ProjectIndex({ searchTerm }) {
   return (
     <>
       <div className="ProjectIndex-Container">
-<<<<<<< HEAD
-        { projects && 
-        filterProjects(projects).map((project) => (
-          <ProjectCard
-            key={project.id}
-            url={project.url}
-            projectName={project.projectName}
-          />
-        ))}
-  
-=======
         {projects &&
           filterProjects(projects).map((project) => (
             <ProjectCard
@@ -65,7 +49,6 @@ function ProjectIndex({ searchTerm }) {
 
           ))}
 
->>>>>>> development
       </div>
     </>
   )
