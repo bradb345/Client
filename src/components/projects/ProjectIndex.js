@@ -38,7 +38,6 @@ function ProjectIndex({ searchTerm }) {
   return (
     <>
       <div className="ProjectIndex-Container">
-<<<<<<< HEAD
         { projects && 
         filterProjects(projects).map((project) => (
           <ProjectCard
@@ -48,19 +47,6 @@ function ProjectIndex({ searchTerm }) {
           />
         ))}
   
-=======
-        {projects &&
-          filterProjects(projects).map((project) => (
-            <ProjectCard
-              key={project.id}
-              url={project.url}
-              projectName={project.projectName}
-              owner={project.owner.username}
-            />
-
-          ))}
-
->>>>>>> development
       </div>
     </>
   )
