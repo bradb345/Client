@@ -24,6 +24,21 @@ function ProjectIndex({ searchTerm }) {
     getData()
   }, [searchTerm])
 
+  const handleUpdateProjects = (updatedProject) => {
+    
+    const updatedProjects = projects.map((project) => {
+      if (updatedProjects.id !== project.id) {
+        return project
+      } else if (!updatedProject) {
+        location.reload()
+      }
+      return updatedProject
+
+    })
+    
+    setProjects(updatedProjects)
+  }
+
   const filterProjects = (projects) => {
     return (
       projects.filter(project => {
@@ -46,6 +61,9 @@ function ProjectIndex({ searchTerm }) {
               url={project.url}
               projectName={project.projectName}
               owner={project.owner.username}
+              handleUpdateProjects={handleUpdateProjects}
+              projectId={project.id}
+              likedByArray={project.favoritedBy}
             />
 
           ))}

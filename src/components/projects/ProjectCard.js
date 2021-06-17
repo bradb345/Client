@@ -1,12 +1,34 @@
 import { faCodeBranch, faUser, faThumbsUp, faDesktop, faLink } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { isAuthenticated, getCurrentUserId } from '../lib/auth'
+import { likeProject } from '../lib/api'
 
 import React from 'react'
-import { getAllProjects } from '../lib/api.js'
 
-function ProjectCard({ projectName, url, owner }) {
 
-  
+function ProjectCard({ projectName, url, owner, handleUpdateProject, projectId, likedByArray }) {
+
+  const [likeText, setLikeText] = React.useState('Like')
+
+  const handleLike = async (event) => {
+    event.stopPropagation()
+
+    if (!isAuthenticated()) {
+      history.push('/auth')
+    }
+
+    likedByArray.includes(getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
+
+    try {
+      const res = await likeProject(projectId)
+      handleUpdateProject(res.data)
+
+    } catch (err) {
+      console.warn(err)
+    }
+
+  }
+
 
   return (
     <>
@@ -23,11 +45,11 @@ function ProjectCard({ projectName, url, owner }) {
 
             <div className="project-info">
               <ul className="user-links">
-                <li><a href="#"><FontAwesomeIcon icon={faUser}/> Project Name: {projectName} </a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> {owner}</a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faUser} /> Project Name: {projectName} </a></li>
+                <li><a href="#"><FontAwesomeIcon icon={faDesktop} /> {owner}</a></li>
               </ul>
-              <br/>
-              <span className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp}/> Like</a></li></span>
+              <br />
+              <span onClick={handleLike} className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp} /> {likeText} {likedByArray.length}</a></li></span>
               {/* <hr/>
               {/* <br/>
               <ul className="site-links">
