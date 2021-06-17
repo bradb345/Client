@@ -29,6 +29,10 @@ export function createProject(formdata) {
   return axios.post(`${baseUrl}/projects/`, formdata, headers())
 }
 
+export function editProject(projectId, formdata) {
+  return axios.put(`${baseUrl}/projects/${projectId}`, formdata, headers())
+}
+
 //* Auth Requests
 
 // .login
