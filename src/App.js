@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/common/NavBar.js'
 import ProjectIndex from './components/projects/ProjectIndex'
 import AuthPage from './components/auth/AuthPage.js'
-import UserCard from './components/users/UserCard.js'
+import UserFeed from './components/users/UserFeed.js'
 import ProjectNew from './components/projects/ProjectNew.js'
 
 
@@ -25,8 +25,8 @@ function App() {
           <Route exact path="/" component={ProjectIndex}>
             <ProjectIndex searchTerm={searchTerm} />
           </Route>
-          <Route path="/profile/:id" component={UserCard}>
-            <UserCard/>
+          <Route path="/profile/:id" component={UserFeed}>
+            <UserFeed/>
           </Route>
           <Route path="/newProject" component={ProjectNew}></Route>
         </>

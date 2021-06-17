@@ -34,5 +34,5 @@ export function isAuthor(userId) {
 export function getCurrentUserId() {
   const payload = getPayload()
   if (!isAuthenticated()) return null
-  return payload.userId
+  return payload.sub
 }
