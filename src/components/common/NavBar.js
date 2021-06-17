@@ -34,7 +34,10 @@ function NavBar({ setSearchTerm, setIsLoginForm }) {
     <>
       <nav>
         <ul className="menu">
-          <li className="home"><a href="#"><FontAwesomeIcon icon={faHome} /> Project Expo</a></li>
+          <Link to="/">
+            <li className="home"><a href="#"><FontAwesomeIcon icon={faHome} /> Project Expo</a></li>
+          </Link>
+
 
           {isLoggedIn && <Link to={`/profile/${getCurrentUserId()}`} className="button">
             <li className="item button"><a href="#">Profile</a></li>
