@@ -31,7 +31,7 @@ function NavBar({ setSearchTerm, setIsLoginForm }) {
   }
 
   const currentUserId = getCurrentUserId()
-  console.log(currentUserId)
+  // console.log(currentUserId)
 
   return (
     <>

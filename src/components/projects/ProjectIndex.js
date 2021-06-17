@@ -8,6 +8,7 @@ function ProjectIndex({ searchTerm }) {
   const [projects, setProjects] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
 
+  console.log(isError)
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -23,7 +24,7 @@ function ProjectIndex({ searchTerm }) {
   }, [searchTerm])
 
   const handleUpdateProjects = (updatedProject) => {
-    
+
     const updatedProjects = projects.map((project) => {
       if (updatedProjects.id !== project.id) {
         return project
@@ -33,7 +34,7 @@ function ProjectIndex({ searchTerm }) {
       return updatedProject
 
     })
-    
+
     setProjects(updatedProjects)
   }
 

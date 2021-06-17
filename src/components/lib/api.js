@@ -17,7 +17,7 @@ export function getAllProjects() {
 }
 
 export function getSingleProject(projectId) {
-  return axios.get(`${baseUrl}/projects/${projectId}`)
+  return axios.get(`${baseUrl}/projects/${projectId}/`)
 }
 
 export function deleteSingleProjectProject(projectId) {
@@ -27,6 +27,10 @@ export function deleteSingleProjectProject(projectId) {
 
 export function createProject(formdata) {
   return axios.post(`${baseUrl}/projects/`, formdata, headers())
+}
+
+export function editProject(projectId, formdata) {
+  return axios.put(`${baseUrl}/projects/${projectId}`, formdata, headers())
 }
 
 export function likeProject(projectId) {

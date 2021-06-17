@@ -22,7 +22,7 @@ function CreateNewProject() {
     }
   }
 
-  
+
   return (
     <section>
       <div>
@@ -36,19 +36,19 @@ function CreateNewProject() {
               placeholder='Project Name'
               name='projectName'
               onChange={handleChange}
-              value={formdata.projectName}
+              // value={formdata.projectName}
             />
           </div>
           {formErrors.projectName && <p>{formErrors.projectName}</p> }
         </div>
         <div>
-          <label> Url </label>
+          <label> Project URL </label>
           <div>
             <input
-              placeholder='url'
+              placeholder='Project URL'
               name='url'
               onChange={handleChange}
-              value={formdata.url}
+              // value={formdata.url}
             />
           </div>
           {formErrors.url}
