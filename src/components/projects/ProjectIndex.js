@@ -16,7 +16,7 @@ function ProjectIndex({ searchTerm }) {
         const response = await getAllProjects()
         setProjects(response.data)
         console.log(response.data)
-        console.log(response.data.map(project=> project.projectName))
+        console.log(response.data.map(project => project.projectName))
       } catch (error) {
         setIsError(true)
       }
@@ -40,15 +40,16 @@ function ProjectIndex({ searchTerm }) {
     <>
       {/* <NavBar setSearchTerm={setSearchTerm}/> */}
       <div className="ProjectIndex-Container">
-        { projects &&
-filterProjects(projects).map((project) => (
-  <ProjectCard
-    key={project.id}
-    url={project.url}
-    projectName={project.projectName}
-  />
+        {projects &&
+          filterProjects(projects).map((project) => (
+            <ProjectCard
+              key={project.id}
+              url={project.url}
+              projectName={project.projectName}
+              owner={project.owner.username}
+            />
 
-))}
+          ))}
 
       </div>
     </>

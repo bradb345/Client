@@ -6,17 +6,22 @@ import { getCurrentUserId, isAuthenticated, removeToken } from '../lib/auth'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-function NavBar({  setSearchTerm, setIsLoginForm }) {
+function NavBar({ setSearchTerm, setIsLoginForm }) {
 
 
   const history = useHistory()
   const isLoggedIn = isAuthenticated()
 
-  const handleClick = () => {
+  const handleLoginButton = () => {
+
+    history.push('/auth')
+    setIsLoginForm(true)
+  }
+
+  const handleSignInButton = () => {
 
     history.push('/auth')
     setIsLoginForm(false)
-    
   }
 
   const handleLogout = () => {
@@ -36,11 +41,11 @@ function NavBar({  setSearchTerm, setIsLoginForm }) {
           </Link>}
           {!isLoggedIn ?
             <>
-              <Link to="/auth">
-                <li className="item button"><a href="#">Login</a></li>
-              </Link>
 
-              <li onClick={handleClick} className="item button secondary"><a href="#">SignUp</a></li>
+              <li onClick={handleLoginButton} className="item button"><a href="#">Login</a></li>
+
+
+              <li onClick={handleSignInButton} className="item button secondary"><a href="#">SignUp</a></li>
               <li className="toggle"><span className="bars"></span></li>
             </>
             :

@@ -19,6 +19,7 @@ function App() {
         <Route path="/auth" component={AuthPage}>
           <AuthPage isLoginForm={isLoginForm} setIsLoginForm={setIsLoginForm} />
         </Route>
+
         <>
           <NavBar setIsLoginForm={setIsLoginForm} setSearchTerm={setSearchTerm} />
           <Route exact path="/" component={ProjectIndex}>
