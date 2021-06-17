@@ -1,12 +1,10 @@
 import React from 'react'
 
 import ProjectCard from './ProjectCard.js'
-// import NavBar from '../common/NavBar.js'
 import { getAllProjects } from '../lib/api.js'
 
 function ProjectIndex({ searchTerm }) {
 
-  // const [searchTerm, setSearchTerm] = React.useState('')
   const [projects, setProjects] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
 
@@ -15,8 +13,9 @@ function ProjectIndex({ searchTerm }) {
       try {
         const response = await getAllProjects()
         setProjects(response.data)
-        console.log(response.data)
-        console.log(response.data.map(project=> project.projectName))
+        // console.log(response.data)
+        // console.log(response.data.map(project=>project.owner))
+        // console.log(response.data.map(project=> project.projectName))
       } catch (error) {
         setIsError(true)
       }
@@ -38,17 +37,15 @@ function ProjectIndex({ searchTerm }) {
 
   return (
     <>
-      {/* <NavBar setSearchTerm={setSearchTerm}/> */}
       <div className="ProjectIndex-Container">
         { projects && 
-       filterProjects(projects).map((project) => (
-         <ProjectCard
-           key={project.id}
-           url={project.url}
-           projectName={project.projectName}
-         />
-
-       ))}
+        filterProjects(projects).map((project) => (
+          <ProjectCard
+            key={project.id}
+            url={project.url}
+            projectName={project.projectName}
+          />
+        ))}
   
       </div>
     </>

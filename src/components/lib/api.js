@@ -38,3 +38,10 @@ export function loginUser(formdata) {
 export function registerUser(formdata) {
   return axios.post(`${baseUrl}/auth/register/`, formdata)
 }
+
+
+//*OWNER(USER) REQUEST
+
+export function getSingleUser(ownerid) {
+  return axios.get(`${baseUrl}auth/profile/${ownerid}`)
+}
