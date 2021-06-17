@@ -25,6 +25,10 @@ export function deleteSingleProjectProject(projectId) {
 
 }
 
+export function createProject(formdata) {
+  return axios.post(`${baseUrl}/projects/`, formdata, headers())
+}
+
 //* Auth Requests
 
 // .login
