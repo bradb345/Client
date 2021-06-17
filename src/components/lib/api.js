@@ -56,6 +56,6 @@ export function registerUser(formdata) {
 
 //*OWNER(USER) REQUEST
 
-export function getSingleUser(ownerid) {
-  return axios.get(`${baseUrl}auth/profile/${ownerid}`)
+export function getSingleUser(userId) {
+  return axios.get(`${baseUrl}/auth/profile/${userId}/`)
 }
