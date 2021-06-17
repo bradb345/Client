@@ -4,6 +4,7 @@ import NavBar from './components/common/NavBar.js'
 import ProjectIndex from './components/projects/ProjectIndex'
 import AuthPage from './components/auth/AuthPage.js'
 import UserCard from './components/users/UserCard.js'
+import ProjectNew from './components/projects/ProjectNew.js'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/userprofile" component={UserCard}>
             <UserCard/>
           </Route>
+          <Route path="/newProject" component={ProjectNew}></Route>
         </>
       </Switch>
     </Router>
