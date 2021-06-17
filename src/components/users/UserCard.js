@@ -14,8 +14,8 @@ function UserCard() {
       try {
         const response = await getAllProjects()
         setProjects(response.data)
-        // console.log(response.data)
-        // console.log(response.data.map(project=>project.owner.username))
+        console.log(response.data)
+        console.log(response.data.map(project=>project.owner.id))
       } catch (error) {
         setIsError(true)
       }

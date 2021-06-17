@@ -28,7 +28,7 @@ Authorization: Bearer {{token}}
 
 {
   "projectName":"SpaceInvaders",
-  "url":"https://craigclem.github.io/SpaceInvader-Game/"
+  "url":""
 }
 
 
