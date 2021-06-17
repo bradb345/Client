@@ -33,6 +33,8 @@ export function likeProject(projectId) {
   return axios.post(`${baseUrl}/projects/${projectId}/favorite`)
 }
 
+
+
 //* Auth Requests
 
 // .login

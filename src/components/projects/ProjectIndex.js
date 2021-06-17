@@ -58,7 +58,7 @@ function ProjectIndex({ searchTerm }) {
               key={project.id}
               url={project.url}
               projectName={project.projectName}
-              owner={project.owner.username}
+              owner={project.owner.id}
               handleUpdateProjects={handleUpdateProjects}
               projectId={project.id}
               likedByArray={project.favoritedBy}
