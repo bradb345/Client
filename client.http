@@ -27,13 +27,8 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-<<<<<<< HEAD
   "projectName":"SpaceInvaders",
   "url":"https://craigclem.github.io/SpaceInvader-Game/"
-=======
-  "projectName":"Mapped Project2",
-  "url":"https://ga-react-punk-api.netlify.app/"
->>>>>>> development
 }
 
 
