@@ -33,6 +33,12 @@ export function editProject(projectId, formdata) {
   return axios.put(`${baseUrl}/projects/${projectId}`, formdata, headers())
 }
 
+export function likeProject(projectId) {
+  return axios.post(`${baseUrl}/projects/${projectId}/favorite`)
+}
+
+
+
 //* Auth Requests
 
 // .login
