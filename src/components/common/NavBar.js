@@ -30,6 +30,9 @@ function NavBar({ setSearchTerm, setIsLoginForm }) {
     location.reload()
   }
 
+  const currentUserId = getCurrentUserId()
+  console.log(currentUserId)
+
   return (
     <>
       <nav>
@@ -39,7 +42,7 @@ function NavBar({ setSearchTerm, setIsLoginForm }) {
           </Link>
 
 
-          {isLoggedIn && <Link to={`/profile/${getCurrentUserId()}`} className="button">
+          {isLoggedIn && <Link to={`/profile/${currentUserId}`} className="button">
             <li className="item button"><a href="#">Profile</a></li>
           </Link>}
           {!isLoggedIn ?

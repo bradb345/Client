@@ -1,7 +1,7 @@
-// import UserCard from './UserCard.js'
-// import ProjectCard from '../projects/ProjectCard.js'
+import UserCard from './UserCard.js'
+import ProjectIndex from '../projects/ProjectCard.js'
 
-function UserFeed({ UserCard, ProjectCard }) {
+function UserFeed() {
 
   
 
@@ -11,7 +11,7 @@ function UserFeed({ UserCard, ProjectCard }) {
         <UserCard/>
       </div>
       <div className="userfeed">
-        <ProjectCard/>
+        {/* <ProjectIndex /> */}
       </div>
     </div>
   )
