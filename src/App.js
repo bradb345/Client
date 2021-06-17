@@ -25,7 +25,7 @@ function App() {
           <Route exact path="/" component={ProjectIndex}>
             <ProjectIndex searchTerm={searchTerm} />
           </Route>
-          <Route path="/userprofile" component={UserCard}>
+          <Route path="/profile/:id" component={UserCard}>
             <UserCard/>
           </Route>
           <Route path="/newProject" component={ProjectNew}></Route>
