@@ -17,7 +17,7 @@ export function getAllProjects() {
 }
 
 export function getSingleProject(projectId) {
-  return axios.get(`${baseUrl}/projects/${projectId}`)
+  return axios.get(`${baseUrl}/projects/${projectId}/`)
 }
 
 export function deleteSingleProjectProject(projectId) {

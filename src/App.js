@@ -5,6 +5,7 @@ import ProjectIndex from './components/projects/ProjectIndex'
 import AuthPage from './components/auth/AuthPage.js'
 import UserCard from './components/users/UserCard.js'
 import ProjectNew from './components/projects/ProjectNew.js'
+import ProjectEdit from './components/projects/projectEdit.js'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <UserCard/>
           </Route>
           <Route path="/newProject" component={ProjectNew}></Route>
+          <Route path="/projects/:projectId/edit" component={ProjectEdit} />
         </>
       </Switch>
     </Router>
