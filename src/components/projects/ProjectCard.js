@@ -8,8 +8,6 @@ import { isAuthenticated, getCurrentUserId } from '../lib/auth'
 import { likeProject } from '../lib/api'
 
 
-
-
 function ProjectCard({ projectName, url, owner, handleUpdateProject, projectId, likedByArray }) {
 
   const [likeText, setLikeText] = React.useState('Like')
@@ -34,11 +32,6 @@ function ProjectCard({ projectName, url, owner, handleUpdateProject, projectId, 
   }
 
 
-
-
-
-
-
   return (
     <>
       <Link to={`/profile/${owner}`}>
@@ -60,7 +53,7 @@ function ProjectCard({ projectName, url, owner, handleUpdateProject, projectId, 
                 </ul>
                 <br/>
                 <span onClick={handleLike} className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp} /> {likeText} {likedByArray && likedByArray.length}</a></li></span>
-              
+
               </div>
             </div>
           </div>
