@@ -4,12 +4,12 @@ import { useForm } from '../hooks/useForm'
 import { createProject } from '../../components/lib/api.js'
 
 function CreateNewProject() {
+
   const history = useHistory()
   const { formdata, formErrors, handleChange, setFormErrors } =
   useForm({
     projectName: '',
     url: '',
-    projectType: '',
   })
 
   const handleSubmit = async (e) => {
@@ -18,12 +18,11 @@ function CreateNewProject() {
       await createProject(formdata)
       history.push('/')
     } catch (error) {
-      alert(error.response.data.errors)
-      setFormErrors(error.response.data.errors)
+      setFormErrors(error.response.data)
     }
   }
-  console.log(formErrors)
-  console.log(formdata)
+
+  
   return (
     <section>
       <div>
@@ -54,7 +53,7 @@ function CreateNewProject() {
           </div>
           {formErrors.url}
         </div>
-        <div>
+        {/* <div>
           <label> Project Type </label>
           <div>
             <input
@@ -65,7 +64,7 @@ function CreateNewProject() {
             />
           </div>
           {formErrors.projectType}
-        </div>
+        </div> */}
         <div>
           <button type='submit'>
             Submit your Project
