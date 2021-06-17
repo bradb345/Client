@@ -12,7 +12,6 @@ function ProjectCard({ projectName, url, owner }) {
 
   
 
-<<<<<<< HEAD
 function ProjectCard({ projectName, url }) {
 
   const { id } = useParams()
@@ -53,26 +52,6 @@ function ProjectCard({ projectName, url }) {
                 <span className="like"><li><FontAwesomeIcon icon={faThumbsUp}/> Like</li></span>
               
                 {/* <hr/>
-=======
-  return (
-    <>
-      <div className="project-body">
-        <div className="project-container">
-          <div className="project-display">
-            <iframe
-              src={url}
-              width="300px"
-              height="300px"
-              title="Project Name"
-              scrolling="no"
-            />
-
-            <div className="project-info">
-              <ul className="user-links">
-                <li><a href="#"><FontAwesomeIcon icon={faUser}/> Project Name: {projectName} </a></li>
-                <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> {owner}</a></li>
-              </ul>
->>>>>>> development
               <br/>
               <ul className="site-links">
                 <li><a href='#'><FontAwesomeIcon icon={faLink}/> LinkedIn</a></li>

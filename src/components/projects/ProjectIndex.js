@@ -13,14 +13,9 @@ function ProjectIndex({ searchTerm }) {
       try {
         const response = await getAllProjects()
         setProjects(response.data)
-<<<<<<< HEAD
-        // console.log(response.data)
-        // console.log(response.data.map(project=>project.owner))
-        // console.log(response.data.map(project=> project.projectName))
-=======
         console.log(response.data)
-        console.log(response.data.map(project => project.projectName))
->>>>>>> development
+        console.log(response.data.map(project=>project.owner))
+        console.log(response.data.map(project=> project.projectName))
       } catch (error) {
         setIsError(true)
       }
