@@ -41,14 +41,14 @@ function ProjectIndex({ searchTerm }) {
       {/* <NavBar setSearchTerm={setSearchTerm}/> */}
       <div className="ProjectIndex-Container">
         { projects &&
-       filterProjects(projects).map((project) => (
-         <ProjectCard
-           key={project.id}
-           url={project.url}
-           projectName={project.projectName}
-         />
+filterProjects(projects).map((project) => (
+  <ProjectCard
+    key={project.id}
+    url={project.url}
+    projectName={project.projectName}
+  />
 
-       ))}
+))}
 
       </div>
     </>

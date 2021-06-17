@@ -24,7 +24,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"Mapped Project",
+  "projectName":"Mapped Project2",
   "url":"https://ga-react-punk-api.netlify.app/"
 }
 
