@@ -29,6 +29,12 @@ export function createProject(formdata) {
   return axios.post(`${baseUrl}/projects/`, formdata, headers())
 }
 
+export function likeProject(projectId) {
+  return axios.post(`${baseUrl}/projects/${projectId}/favorite`)
+}
+
+
+
 //* Auth Requests
 
 // .login

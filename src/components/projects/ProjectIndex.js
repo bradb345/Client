@@ -13,15 +13,29 @@ function ProjectIndex({ searchTerm }) {
       try {
         const response = await getAllProjects()
         setProjects(response.data)
-        // console.log(response.data)
-        // console.log(response.data.map(project=>project.owner))
-        // console.log(response.data.map(project=> project.projectName))
+        console.log(response.data)
+        console.log(response.data.map(project => project.projectName))
       } catch (error) {
         setIsError(true)
       }
     }
     getData()
   }, [searchTerm])
+
+  const handleUpdateProjects = (updatedProject) => {
+    
+    const updatedProjects = projects.map((project) => {
+      if (updatedProjects.id !== project.id) {
+        return project
+      } else if (!updatedProject) {
+        location.reload()
+      }
+      return updatedProject
+
+    })
+    
+    setProjects(updatedProjects)
+  }
 
   const filterProjects = (projects) => {
     return (
@@ -44,7 +58,10 @@ function ProjectIndex({ searchTerm }) {
               key={project.id}
               url={project.url}
               projectName={project.projectName}
-              owner={project.owner.username}
+              owner={project.owner.id}
+              handleUpdateProjects={handleUpdateProjects}
+              projectId={project.id}
+              likedByArray={project.favoritedBy}
             />
 
           ))}
