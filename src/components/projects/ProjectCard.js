@@ -59,7 +59,7 @@ function ProjectCard({ projectName, url, owner, handleUpdateProject, projectId, 
                   <li><a href="#"><FontAwesomeIcon icon={faDesktop}/> Project Type: Game</a></li>
                 </ul>
                 <br/>
-                <span onClick={handleLike} className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp} /> {likeText} {likedByArray.length}</a></li></span>
+                <span onClick={handleLike} className="like"><li><a href="#"><FontAwesomeIcon icon={faThumbsUp} /> {likeText} {likedByArray && likedByArray.length}</a></li></span>
               
               </div>
             </div>

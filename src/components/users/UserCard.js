@@ -1,49 +1,55 @@
 import React from 'react'
-import { getAllProjects } from '../lib/api.js'
+import { getAllProjects, getSingleUser } from '../lib/api'
 
 import { faEnvelope, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useParams } from 'react-router-dom'
 
 
 function UserCard() {
 
-  const [projects, setProjects] = React.useState(null)
+  const { id } = useParams()
+
+  const [user, setUser] = React.useState(null)
 
   React.useEffect(() => {
     const getData = async () => {
       try {
-        const response = await getAllProjects()
-        setProjects(response.data)
-        // console.log(response.data)
-        // console.log(response.data.map(project=>project.owner.username))
-      } catch (error) {
-        setIsError(true)
-      }
-    }
-    getData()
-  }, [])
+        const response = await getSingleUser(id)
+        setUser(response.data)
+        console.log(response.data)
 
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+
+    getData()
+  }, [id])
+
+  console.log(user)
 
   return (
     <>
       <div className="user-card-container">
         <div className="user-profile-image">
 
-          <img src= "https://uploads-ssl.webflow.com/6030077fdbd53858ff7c4765/603c1ac00b9e8a080528b4ae_SalonBrillareGenericProfileAvi.jpg"/>
+          <img src="https://uploads-ssl.webflow.com/6030077fdbd53858ff7c4765/603c1ac00b9e8a080528b4ae_SalonBrillareGenericProfileAvi.jpg" />
         </div>
         <div className="user-deets-container">
           <div className="user-title">
-            <p>MF Doom</p>
+            <p>{user && user.username}</p>
             <p>Junior Software Developer</p>
           </div>
           <div className="user-site link">
             <a href="https://gasdrawls.com/">www.gasdrawls.com</a>
           </div>
-          <br/>
+          <br />
         </div>
         <div className="btn-container">
-          <button><FontAwesomeIcon icon={faPlusCircle}/> Follow</button>
-          <button className="hire-btn"><FontAwesomeIcon icon={faEnvelope}/> Hire Me</button>
+          <button><FontAwesomeIcon icon={faPlusCircle} /> Follow</button>
+          <button className="hire-btn"><FontAwesomeIcon icon={faEnvelope} /> Hire Me</button>
         </div>
       </div>
 
