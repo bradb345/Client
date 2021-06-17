@@ -8,6 +8,7 @@ function ProjectIndex({ searchTerm }) {
   const [projects, setProjects] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
 
+  console.log(isError)
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -16,8 +17,6 @@ function ProjectIndex({ searchTerm }) {
         // console.log(response.data)
         // console.log(response.data.map(project=>project.owner))
         // console.log(response.data.map(project=> project.projectName))
-        console.log(response.data)
-        console.log(response.data.map(project => project.projectName))
       } catch (error) {
         setIsError(true)
       }
@@ -40,16 +39,14 @@ function ProjectIndex({ searchTerm }) {
   return (
     <>
       <div className="ProjectIndex-Container">
-        {projects &&
-          filterProjects(projects).map((project) => (
-            <ProjectCard
-              key={project.id}
-              url={project.url}
-              projectName={project.projectName}
-              owner={project.owner.username}
-            />
-
-          ))}
+        { projects &&
+        filterProjects(projects).map((project) => (
+          <ProjectCard
+            key={project.id}
+            url={project.url}
+            projectName={project.projectName}
+          />
+        ))}
 
       </div>
     </>
