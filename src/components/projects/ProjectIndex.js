@@ -38,7 +38,6 @@ function ProjectIndex({ searchTerm }) {
 
   return (
     <>
-      {/* <NavBar setSearchTerm={setSearchTerm}/> */}
       <div className="ProjectIndex-Container">
         {projects &&
           filterProjects(projects).map((project) => (

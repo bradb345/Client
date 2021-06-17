@@ -27,7 +27,7 @@ function SearchBar({ setSearchTerm }) {
           onChange={handleInput}/>
         <nav className="search-navbar">
           <ul className="search-item-container">
-            <li><a href="#">Projects</a></li>
+            <li><a href="#">Liked Projects</a></li>
             <li><a href="#">People</a></li>
             <li><a href="#">Inspire Me</a></li>
           </ul>
