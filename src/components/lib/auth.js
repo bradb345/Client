@@ -36,3 +36,10 @@ export function getCurrentUserId() {
   if (!isAuthenticated()) return null
   return payload.sub
 }
+
+// export function isOwner(userId) {
+//   const payload = getPayload()
+
+//   if (!payload) return false
+//   return userId === payload.sub
+// }

@@ -41,7 +41,7 @@ function Login({ setIsLoginForm }) {
           <div className="control">
             <input
               className="input"
-              placeholder="Email"
+              placeholder="name@email.com"
               name="email"
               onChange={handleChange}
             />

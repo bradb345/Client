@@ -2,10 +2,19 @@
   "workbench.colorCustomizations": {
     "statusBar.background": "#0060aa",
     "titleBar.activeBackground": "#0060aa",
-    "titleBar.inactiveBackground": "#0060aa",
-    "statusBar.foreground": "#000",
-    "titleBar.inactiveForeground": "#000",
-    "titleBar.activeForeground": "#000",
+    "titleBar.inactiveBackground": "#0060aa99",
+    "statusBar.foreground": "#e7e7e7",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "titleBar.activeForeground": "#e7e7e7",
+    "activityBar.activeBackground": "#007ddd",
+    "activityBar.activeBorder": "#ff9fd5",
+    "activityBar.background": "#007ddd",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#ff9fd5",
+    "activityBarBadge.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#007ddd"
   },
-  "window.title": "Project-Expo - FRONTEND"
+  "window.title": "Project-Expo - FRONTEND",
+  "peacock.color": "#0060aa"
 }
