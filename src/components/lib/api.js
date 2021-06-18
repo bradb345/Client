@@ -30,7 +30,7 @@ export function createProject(formdata) {
 }
 
 export function editProject(projectId, formdata) {
-  return axios.put(`${baseUrl}/projects/${projectId}`, formdata, headers())
+  return axios.put(`${baseUrl}/projects/${projectId}/`, formdata, headers())
 }
 
 export function likeProject(projectId) {
