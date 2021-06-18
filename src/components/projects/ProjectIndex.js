@@ -2,13 +2,15 @@ import React from 'react'
 
 import ProjectCard from './ProjectCard.js'
 import { getAllProjects } from '../lib/api.js'
+import Error from '../common/Error.js'
 
 function ProjectIndex({ searchTerm }) {
 
   const [projects, setProjects] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
+  const isLoading = !projects && !isError
 
-  console.log(isError)
+
   React.useEffect(() => {
     const getData = async () => {
       try {
@@ -26,7 +28,7 @@ function ProjectIndex({ searchTerm }) {
   const handleUpdateProjects = (updatedProject) => {
 
     const updatedProjects = projects.map((project) => {
-      if (updatedProjects.id !== project.id) {
+      if (updatedProject.id !== project.id) {
         return project
       } else if (!updatedProject) {
         location.reload()
@@ -53,6 +55,8 @@ function ProjectIndex({ searchTerm }) {
   return (
     <>
       <div className="ProjectIndex-Container">
+        {isError && <Error/>}
+        {isLoading && <p>...Loading</p>}
         {projects &&
           filterProjects(projects).map((project) => (
             <ProjectCard

@@ -30,8 +30,6 @@ function ProjectEdit() {
     
   }, [projectId, setFormdata, setFormErrors])
 
- 
-  
 
   const handleSubmit = async event => {
     event.preventDefault()

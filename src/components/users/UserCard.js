@@ -17,7 +17,7 @@ function UserCard() {
       try {
         const response = await getSingleUser(id)
         setUser(response.data)
-        console.log(response.data)
+        
 
       } catch (error) {
         console.log(error)
@@ -28,7 +28,7 @@ function UserCard() {
     getData()
   }, [id])
 
-  console.log(user)
+  
 
   return (
     <>

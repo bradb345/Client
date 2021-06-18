@@ -34,7 +34,7 @@ export function editProject(projectId, formdata) {
 }
 
 export function likeProject(projectId) {
-  return axios.post(`${baseUrl}/projects/${projectId}/favorite`)
+  return axios.post(`${baseUrl}/projects/${projectId}/favorite/`, null, headers())
 }
 
 
