@@ -309,23 +309,33 @@ height: 200px;
 background-image: url('http://thevinylfactory.com/wp-content/uploads/2021/05/MF-DOOM.jpg');
 }
 
+
+.mainUser-card {
+
+  margin-top:50px;
+
+}
+
 .user-card-container {
   // position:absolute;
   display:flex;
   flex-direction: column;
   justify-content:center;
-  width: 310px;
-  margin: 5px 10px 0px 30px;
+  width: 400px;
+  margin: 5px 10px 50px 30px;
   border: 1px solid white;
   padding: 5px
 
 }
 
 .user-profile-image img {
+  margin: 40px;
   border: 1px solid white;
   width: 300px;
+  height:300px;
   border-radius: 50em;
 }
+
 
 .user-title {
   font-size: 20px;
@@ -352,7 +362,7 @@ background-image: url('http://thevinylfactory.com/wp-content/uploads/2021/05/MF-
 
 .btn-container button {  
   height:30px;
-  margin: 5px 0px;
+  margin: 5px 15px;
   background-color: #444;
   border-radius: 30em;
   border: 1px solid white;
@@ -364,6 +374,11 @@ background-image: url('http://thevinylfactory.com/wp-content/uploads/2021/05/MF-
 background-color:red;
 color:black;
 
+}
+
+.addProject {
+  width:360px;
+  text-align: center;
 }
 
 
@@ -387,6 +402,14 @@ color:black;
   flex-wrap: wrap;
   justify-content: center;
   background-color:black;
+}
 
+.user-site-link {
+  line-height: 2rem;
+  color:white;
+  margin: 5px 15px;
+}
 
+.user-site-link span {
+  color:black;
 }

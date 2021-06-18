@@ -1,7 +1,9 @@
 import React from 'react'
-import { getAllProjects, getSingleUser } from '../lib/api'
+import { getSingleUser } from '../lib/api'
+import { Link } from 'react-router-dom'
+import { isAuthor } from '../lib/auth'
 
-import { faEnvelope, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPlusCircle, faCameraRetro, faCodeBranch, faBriefcase, faDesktop, faDove, faPlus  } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useParams } from 'react-router-dom'
 
@@ -32,28 +34,46 @@ function UserCard() {
 
   return (
     <>
-      <div className="user-card-container">
-        <div className="user-profile-image">
+      <div className="mainUser-card">
+        <div className="user-card-container">
+          <div className="user-profile-image">
 
-          <img src="https://uploads-ssl.webflow.com/6030077fdbd53858ff7c4765/603c1ac00b9e8a080528b4ae_SalonBrillareGenericProfileAvi.jpg" />
-        </div>
-        <div className="user-deets-container">
-          <div className="user-title">
-            <p>{user && user.username}</p>
-            <p>Junior Software Developer</p>
+            <img src={user && user.profileImage}/>
           </div>
-          <div className="user-site link">
-            <a href="https://gasdrawls.com/">www.gasdrawls.com</a>
+          <div className="user-deets-container">
+            <div className="user-title">
+              <p>{user && user.username}</p>
+              <p>Junior Software Developer</p>
+            </div>
+            <div className="user-site link">
+              <a href="https://gasdrawls.com/">www.gasdrawls.com</a>
+            </div>
+            <br />
           </div>
-          <br />
-        </div>
-        <div className="btn-container">
-          <button><FontAwesomeIcon icon={faPlusCircle} /> Follow</button>
-          <button className="hire-btn"><FontAwesomeIcon icon={faEnvelope} /> Hire Me</button>
+          <div className="btn-container">
+            <button><FontAwesomeIcon icon={faPlusCircle} /> Follow</button>
+            <button className="hire-btn"><FontAwesomeIcon icon={faEnvelope} /> Hire Me</button>
+            <Link to="/newProject">
+
+              {!isAuthor(id) ? 
+                <button className="addProject"><FontAwesomeIcon icon={faPlus} /> Add Project</button>
+                : 
+                <div/>
+              }
+            </Link>
+          </div>
+          <br/>
+          <hr/>
+          <br/>
+          <div className="user-site-link">
+            <p><FontAwesomeIcon icon={faCodeBranch}/> GitHub : <span>{user && user.username}</span></p>
+            <p><FontAwesomeIcon icon={faBriefcase}/> LinkedIn : <span>{user && user.username}</span></p>
+            <p><FontAwesomeIcon icon={faDesktop}/> My Site : <span>{user && user.username}</span></p>
+            <p><FontAwesomeIcon icon={faDove}/> Twitter : <span>{user && user.username}</span></p>
+            <p><FontAwesomeIcon icon={faCameraRetro}/> Instagram : <span>{user && user.username}</span></p>
+          </div>
         </div>
       </div>
-
-
     </>
   )
 }

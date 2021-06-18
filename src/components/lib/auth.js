@@ -25,10 +25,10 @@ export function isAuthenticated() {
   return now < payload.exp
 }
 
-export function isAuthor(userId) {
+export function isAuthor(id) {
   const payload = getPayload()
   if (!isAuthenticated()) return false
-  return payload.userId === userId
+  return payload.sub === id
 }
 
 export function getCurrentUserId() {

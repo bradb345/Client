@@ -1,6 +1,5 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYyNDM4MDI3M30.vTwrhwIwAwo7XAxEf4GFopiuKMvTGGhMolA58yjsoYI
-
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYyNDU1NTk1N30.vF4gqT_oC0Yk8By3a8mCm-AvEEGIcpg3ZSP2_FGKrHc
 @id = 3
 
 #GET ALL PROJECTS
@@ -27,8 +26,9 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"SpaceInvaders",
-  "url":""
+  "projectName":"High Focus",
+  "url":"https://www.high-focus.com/home/"
+  
 }
 
 
@@ -38,10 +38,18 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"cc",
-"email":"cc@email.com",
+"username":"CraigClement",
+"email":"craig@email.com",
 "password":"pass",
-"passwordConfirmation":"pass"
+"passwordConfirmation":"pass",
+"profileImage":"https://i.imgflip.com/47n5zy.png",
+"GAcohort":"SEI#55",
+"LinkedIn":"www.linkedin.com",
+"Github":"www.github.com",
+"Twitter":"www.twitter.com",
+"Instagram":"www.instagram.com",
+"personal_site":"www.google.com"
+
 }
 
 ###
@@ -50,7 +58,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"cc@email.com",
+  "email":"craig@email.com",
   "password":"pass"
 }
 
