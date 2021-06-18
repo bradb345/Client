@@ -38,16 +38,16 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"CraigClement",
-"email":"craig@email.com",
+"username":"PleaseWork",
+"email":"PleaseWork@email.com",
 "password":"pass",
 "passwordConfirmation":"pass",
 "profileImage":"https://i.imgflip.com/47n5zy.png",
-"GAcohort":"SEI#55",
-"LinkedIn":"www.linkedin.com",
-"Github":"www.github.com",
-"Twitter":"www.twitter.com",
-"Instagram":"www.instagram.com",
+"gacohort":"SEI#55",
+"linkedin":"www.linkedin.com",
+"github":"www.github.com",
+"twitter":"www.twitter.com",
+"instagram":"www.instagram.com",
 "personal_site":"www.google.com"
 
 }
@@ -58,7 +58,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"craig@email.com",
+  "email":"MainTest@email.com",
   "password":"pass"
 }
 
