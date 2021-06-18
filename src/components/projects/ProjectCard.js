@@ -9,24 +9,13 @@ import { likeProject, deleteSingleProject } from '../lib/api'
 
 
 function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray }) {
-
+  
   const [likeText, setLikeText] = React.useState('Like')
   const history = useHistory()
 
-  // React.useEffect(() => {
-  //   likedByArray.includes(getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
-  //   const getData = async () => {
-  //     try {
-  //       await setLikedNames(await Promise.all(likedByArray.map(async (user) => {
-  //         const res = await getSingleUser(user)
-  //         return res.data.username
-  //       })))
-  //     } catch (err) {
-  //       console.warn('Failed to fetch Author')
-  //     }
-  //   }
-  //   getData()
-  // }, [likedByArray])
+  React.useEffect(() => {
+    likedByArray.some(like => like.id === getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
+  }, [likedByArray])
 
   const handleLike = async (event) => {
     event.stopPropagation()
