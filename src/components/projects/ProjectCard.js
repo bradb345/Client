@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link, useParams, useHistory } from 'react-router-dom'
-import { getSingleUser } from '../lib/api.js'
+import { Link, useHistory } from 'react-router-dom'
+
 
 import { faUser, faThumbsUp, faDesktop } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { isAuthenticated, getCurrentUserId } from '../lib/auth'
-import { likeProject } from '../lib/api'
+import { isAuthenticated, getCurrentUserId, isAuthor } from '../lib/auth'
+import { likeProject, deleteSingleProject } from '../lib/api'
 
 
 function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray }) {
@@ -27,14 +27,19 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
     } catch (err) {
       console.log(err)
     }
-
   }
 
-  
+  const handleDelete = async () => {
+    await deleteSingleProject(projectId)
+    history.push('/')
+  }
 
+  // console.log(setProject)
+  // console.log(project.owner)
   return (
     <>
       <Link to={`/profile/${owner}`}>
+
         <div className="project-body">
           <div className="project-container">
             <div className="project-display">
@@ -54,10 +59,29 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
                 <br />
                 <a onClick={handleLike} className="like" href="#"><FontAwesomeIcon icon={faThumbsUp} /> {likeText} {likedByArray && likedByArray.length}</a>
 
+                <div>
+                  {isAuthor(owner) && (
+                    <div>
+                      <div>
+                        <Link to={`/projects/${projectId}/edit/`}>
+              Edit your Project
+                        </Link>
+                      </div>
+                      <div>
+                        <button onClick={handleDelete}>
+              Delete you Project!
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
+
+
             </div>
           </div>
         </div>
+
       </Link>
     </>
   )
