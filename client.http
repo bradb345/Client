@@ -1,10 +1,5 @@
 @url=http://localhost:8000/api/
-<<<<<<< HEAD
 @token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYyNDU1NTk1N30.vF4gqT_oC0Yk8By3a8mCm-AvEEGIcpg3ZSP2_FGKrHc
-=======
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjMsImV4cCI6MTYyNDYxOTE0MH0.7_oH_ClCpXqssED0B2cY3-Mv4TPP-dbpEbJq0OCIKRI
-
->>>>>>> development
 @id = 3
 
 #GET ALL PROJECTS
@@ -63,11 +58,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-<<<<<<< HEAD
   "email":"MainTest@email.com",
-=======
-  "email":"brad@email.com",
->>>>>>> development
   "password":"pass"
 }
 
