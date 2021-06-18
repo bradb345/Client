@@ -60,7 +60,7 @@ function Register({ setIsLoginForm }) {
           <div className="control">
             <input
               className={`input ${formErrors.email ? 'is-danger' : ''}`}
-              placeholder="Email"
+              placeholder="name@email.com"
               onChange={handleChange}
               name="email"
               id="email"

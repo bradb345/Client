@@ -20,7 +20,7 @@ export function getSingleProject(projectId) {
   return axios.get(`${baseUrl}/projects/${projectId}/`)
 }
 
-export function deleteSingleProjectProject(projectId) {
+export function deleteSingleProject(projectId) {
   return axios.delete(`${baseUrl}/projects/${projectId}`, headers())
 
 }
