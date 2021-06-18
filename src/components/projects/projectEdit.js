@@ -6,7 +6,8 @@ import { getSingleProject, editProject } from '../lib/api'
 function ProjectEdit() {
   const history = useHistory()
   const { projectId } = useParams()
-  const { formdata, formErrors, handleChange, setFormErrors, setFormData } = useForm({
+
+  const { formdata, formErrors, handleChange, setFormErrors, setFormdata } = useForm({
     projectName: '',
     url: '',
   })
@@ -15,24 +16,24 @@ function ProjectEdit() {
   React.useEffect(() => {
     const getData = async () => {
       try {
-        // console.log('insideUseEffect')
         const res = await getSingleProject(projectId)
-
-        setFormData(res.data)
-
-
+        console.log(res.data)
+        setFormdata(res.data)
+        
       } catch (error) {
         if (error.response) {
-          alert(error.response.data)
           setFormErrors(error.response.data)
         }
       }
     }
-
     getData()
-  }, [projectId, setFormData, setFormErrors])
+    
+  }, [projectId, setFormdata, setFormErrors])
 
-  console.log(setFormData)
+  console.log(getSingleProject(projectId))
+  console.log(formdata)
+  
+
   const handleSubmit = async event => {
     event.preventDefault()
 
@@ -43,7 +44,7 @@ function ProjectEdit() {
       setFormErrors(error.response.data)
     }
   }
-  
+
   return (
     <section>
       <div>
@@ -51,7 +52,7 @@ function ProjectEdit() {
       </div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label> Project Name </label>
+          <label htmlFor="projectName"> Project Name </label>
           <div>
             <input
               placeholder='Project Name'
@@ -60,7 +61,7 @@ function ProjectEdit() {
               value={formdata.projectName}
             />
           </div>
-          {formErrors.projectName && <p>{formErrors.projectName}</p> }
+          {formErrors.projectName && <p>{formErrors.projectName}</p>}
         </div>
         <div>
           <label>Project URL </label>
@@ -76,7 +77,7 @@ function ProjectEdit() {
         </div>
         <div>
           <button type='submit'>
-        Edit your Project !!!
+            Edit your Project !!!
           </button>
         </div>
       </form>
