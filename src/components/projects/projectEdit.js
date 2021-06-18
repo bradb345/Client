@@ -17,7 +17,7 @@ function ProjectEdit() {
     const getData = async () => {
       try {
         const res = await getSingleProject(projectId)
-        console.log(res.data)
+        
         setFormdata(res.data)
         
       } catch (error) {
@@ -30,8 +30,7 @@ function ProjectEdit() {
     
   }, [projectId, setFormdata, setFormErrors])
 
-  console.log(getSingleProject(projectId))
-  console.log(formdata)
+ 
   
 
   const handleSubmit = async event => {
