@@ -58,11 +58,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-<<<<<<< HEAD
   "email":"MainTest@email.com",
-=======
-  "email":"brad@email.com",
->>>>>>> development
   "password":"pass"
 }
 

@@ -1,17 +1,17 @@
 import UserCard from './UserCard.js'
-// import ProjectIndex from '../projects/ProjectCard.js'
+import ProjectIndex from '../projects/ProjectIndex.js'
 
-function UserFeed() {
+function UserFeed({ searchTerm }) {
 
-  
+
 
   return (
     <div className="userpage-container">
       <div className="userprofile">
-        <UserCard/>
+        <UserCard />
       </div>
-      <div className="userfeed">
-        {/* <ProjectIndex/> */}
+      <div >
+        <ProjectIndex searchTerm={searchTerm} />
       </div>
     </div>
   )

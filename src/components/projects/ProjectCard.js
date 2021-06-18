@@ -13,13 +13,33 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
   const [likeText, setLikeText] = React.useState('Like')
   const history = useHistory()
 
+  // React.useEffect(() => {
+  //   likedByArray.includes(getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
+  //   const getData = async () => {
+  //     try {
+  //       await setLikedNames(await Promise.all(likedByArray.map(async (user) => {
+  //         const res = await getSingleUser(user)
+  //         return res.data.username
+  //       })))
+  //     } catch (err) {
+  //       console.warn('Failed to fetch Author')
+  //     }
+  //   }
+  //   getData()
+  // }, [likedByArray])
+
   const handleLike = async (event) => {
     event.stopPropagation()
-    console.log('click')
+    console.log()
     if (!isAuthenticated()) {
       history.push('/auth')
     }
-    likedByArray.includes(getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
+    if (likedByArray.includes(getCurrentUserId())) {
+      setLikeText('Unlike')
+    } else {
+      setLikeText('Like')
+    } 
+    console.log(likedByArray)
     try {
       const res = await likeProject(projectId)
       handleUpdateProjects(res.data)
