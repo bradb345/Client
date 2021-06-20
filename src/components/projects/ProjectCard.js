@@ -8,7 +8,7 @@ import { isAuthenticated, getCurrentUserId, isAuthor } from '../lib/auth'
 import { likeProject, deleteSingleProject } from '../lib/api'
 
 
-function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray }) {
+function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray, username }) {
   
   const [likeText, setLikeText] = React.useState('Like')
   const history = useHistory()
@@ -60,7 +60,7 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
               <ul className="user-links">
                 <li><a href="#"><FontAwesomeIcon icon={faDesktop} /> Project Name: {projectName} </a></li>
                 <Link to={`/profile/${owner}`}> 
-                  <li><FontAwesomeIcon icon={faUser} /> User</li>
+                  <li><FontAwesomeIcon icon={faUser} /> User: {username}</li>
                 </Link>
                 <li><FontAwesomeIcon icon={faLink}/><a className="website-link" href={`${url}`} target="_blank" rel="noopener noreferrer"> Visit Site</a></li>
               </ul>
