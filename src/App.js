@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/common/NavBar.js'
-import ProjectIndex from './components/projects/ProjectIndex'
+import Feed from './components/common/Feed.js'
 import AuthPage from './components/auth/AuthPage.js'
 import UserFeed from './components/users/UserFeed.js'
 import ProjectNew from './components/projects/ProjectNew.js'
@@ -23,12 +23,11 @@ function App() {
 
         <>
           <NavBar setIsLoginForm={setIsLoginForm} setSearchTerm={setSearchTerm} />
-          <Route exact path="/" component={ProjectIndex}>
-            <ProjectIndex searchTerm={searchTerm} />
+          <Route exact path="/" component={Feed}>
+            <Feed searchTerm={searchTerm} />
           </Route>
           <Route path="/profile/:id" component={UserFeed}>
-            <UserFeed/>
-            {/* <ProjectIndex/> */}
+            <UserFeed searchTerm={searchTerm}/>
           </Route>
           <Route path="/projects/new" component={ProjectNew} />
           <Route path="/projects/:projectId/edit" component={ProjectEdit} />

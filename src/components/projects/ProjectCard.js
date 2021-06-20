@@ -9,17 +9,26 @@ import { likeProject, deleteSingleProject } from '../lib/api'
 
 
 function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray }) {
-
+  
   const [likeText, setLikeText] = React.useState('Like')
   const history = useHistory()
 
+  React.useEffect(() => {
+    likedByArray.some(like => like.id === getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
+  }, [likedByArray])
+
   const handleLike = async (event) => {
     event.stopPropagation()
-    console.log('click')
+    console.log()
     if (!isAuthenticated()) {
       history.push('/auth')
     }
-    likedByArray.includes(getCurrentUserId()) ? setLikeText('Unlike') : setLikeText('Like')
+    if (likedByArray.includes(getCurrentUserId())) {
+      setLikeText('Unlike')
+    } else {
+      setLikeText('Like')
+    } 
+    console.log(likedByArray)
     try {
       const res = await likeProject(projectId)
       handleUpdateProjects(res.data)
