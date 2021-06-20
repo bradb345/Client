@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
 
-import { faUser, faThumbsUp, faDesktop, faEdit, faRemoveFormat } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faThumbsUp, faDesktop, faEdit, faRemoveFormat, faLink } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isAuthenticated, getCurrentUserId, isAuthor } from '../lib/auth'
 import { likeProject, deleteSingleProject } from '../lib/api'
@@ -43,6 +43,8 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
     history.push('/')
   }
 
+  console.log(url)
+
   // console.log(setProject)
   // console.log(project.owner)
   return (
@@ -53,7 +55,7 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
           <div className="project-container">
             <div className="project-display">
               <iframe
-                src={url}
+                src={`${url}`}
                 width="300px"
                 height="300px"
                 title="Project Name"
@@ -64,6 +66,7 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
                 <ul className="user-links">
                   <li><a href="#"><FontAwesomeIcon icon={faDesktop} /> Project Name: {projectName} </a></li>
                   <li><a href="#"><FontAwesomeIcon icon={faUser} /> User: {username} </a></li>
+                  <li><FontAwesomeIcon icon={faLink}/><a href={`${url}`}> Visit Site</a></li>
                 </ul>
                 <br />
                 <hr/>
