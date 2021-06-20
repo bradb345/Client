@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 function SearchBar({ setSearchTerm }) {
-  const [projects, setProjects] = React.useState(null)
+  
 
   const handleInput = (e) => {
     setSearchTerm(e.target.value)
