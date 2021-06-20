@@ -50,7 +50,8 @@ function ProjectIndex({ searchTerm, id }) {
           )
         }
         return (
-          project.projectName.toLowerCase().includes(searchTerm)
+          (project.projectName.toLowerCase().includes(searchTerm) ||
+          project.owner.username.toLowerCase().includes(searchTerm))
         )
       })
     )
@@ -69,6 +70,7 @@ function ProjectIndex({ searchTerm, id }) {
               key={project.id}
               url={project.url}
               projectName={project.projectName}
+              username={project.owner.username}
               owner={project.owner.id}
               handleUpdateProjects={handleUpdateProjects}
               projectId={project.id}
