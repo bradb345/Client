@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { useParams } from 'react-router-dom'
 
 
-function UserCard({ id }) {
+function UserCard({ id, profileImage , username, gacohort, github, linkedin, instagram, personalsite, twitter }) {
 
   // const { id } = useParams()
 
@@ -38,11 +38,11 @@ function UserCard({ id }) {
         <div className="user-card-container">
           <div className="user-profile-image">
 
-            <img src={user && user.profileImage} />
+            <img src={user && user.profileImage || profileImage} />
           </div>
           <div className="user-deets-container">
             <div className="user-title">
-              <p>{user && user.username}</p>
+              <p>{user && user.username || username}</p>
               <p>Junior Software Developer</p>
             </div>
             <div className="user-site link">
@@ -66,12 +66,12 @@ function UserCard({ id }) {
           <hr />
           <br />
           <div className="user-site-link">
-            <p><FontAwesomeIcon icon={faSchool} /> Cohort : <span>{user && user.gacohort}</span></p>
-            <p><FontAwesomeIcon icon={faCodeBranch} /> GitHub : <span>{user && user.github}</span></p>
-            <p><FontAwesomeIcon icon={faBriefcase} /> LinkedIn : <span>{user && user.linkedin}</span></p>
-            <p><FontAwesomeIcon icon={faDesktop} /> My Site : <span>{user && user.personalsite}</span></p>
-            <p><FontAwesomeIcon icon={faDove} /> Twitter : <span>{user && user.twitter}</span></p>
-            <p><FontAwesomeIcon icon={faCameraRetro} /> Instagram : <span>{user && user.instagram}</span></p>
+            <p><FontAwesomeIcon icon={faSchool} /> Cohort : <span>{user && user.gacohort || gacohort }</span></p>
+            <p><FontAwesomeIcon icon={faCodeBranch} /> GitHub : <span>{user && user.github || github }</span></p>
+            <p><FontAwesomeIcon icon={faBriefcase} /> LinkedIn : <span>{user && user.linkedin || linkedin}</span></p>
+            <p><FontAwesomeIcon icon={faDesktop} /> My Site : <span>{user && user.personalsite || personalsite}</span></p>
+            <p><FontAwesomeIcon icon={faDove} /> Twitter : <span>{user && user.twitter || twitter }</span></p>
+            <p><FontAwesomeIcon icon={faCameraRetro} /> Instagram : <span>{user && user.instagram || instagram}</span></p>
           </div>
         </div>
       </div>

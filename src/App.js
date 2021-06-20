@@ -6,6 +6,8 @@ import AuthPage from './components/auth/AuthPage.js'
 import UserFeed from './components/users/UserFeed.js'
 import ProjectNew from './components/projects/ProjectNew.js'
 import ProjectEdit from './components/projects/projectEdit.js'
+import UserIndex from './components/users/UserIndex.js'
+import UserCard from './components/users/UserCard.js'
 
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
           </Route>
           <Route path="/projects/new" component={ProjectNew} />
           <Route path="/projects/:projectId/edit" component={ProjectEdit} />
+          <Route path="/users" component={UserCard}>
+            <UserIndex/>
+          </Route>
         </>
       </Switch>
     </Router>

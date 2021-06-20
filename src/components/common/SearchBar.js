@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,7 +29,9 @@ function SearchBar({ setSearchTerm }) {
         <nav className="search-navbar">
           <ul className="search-item-container">
             <li><a href="#">Favorited</a></li>
-            <li><a href="#">People</a></li>
+            <Link to="/users">
+              <li><a>People</a></li>
+            </Link>
             <li><a href="#">Inspire Me</a></li>
           </ul>
         </nav>
