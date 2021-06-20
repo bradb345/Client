@@ -46,7 +46,7 @@ function UserCard() {
               <p>Junior Software Developer</p>
             </div>
             <div className="user-site link">
-              <a href="https://gasdrawls.com/">{user && user.personalsite}</a>
+              {/* <a href={user && user.personalsite}>{user && user.personalsite}</a> */}
             </div>
             <br />
           </div>
@@ -55,7 +55,7 @@ function UserCard() {
             <button className="hire-btn"><FontAwesomeIcon icon={faEnvelope} /> Hire Me</button>
             <Link to="/projects/new">
 
-              {!isAuthor(id) ? 
+              {isAuthor(user && user.id) ? 
                 <button className="addProject"><FontAwesomeIcon icon={faPlus} /> Add Project</button>
                 :
                 <div/>

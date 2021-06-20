@@ -1,8 +1,11 @@
 import UserCard from './UserCard.js'
 import ProjectIndex from '../projects/ProjectIndex.js'
+import { useParams } from 'react-router-dom'
 
 function UserFeed({ searchTerm }) {
 
+
+  const { id } = useParams()
 
 
   return (
@@ -11,7 +14,7 @@ function UserFeed({ searchTerm }) {
         <UserCard />
       </div>
       <div >
-        <ProjectIndex searchTerm={searchTerm} />
+        <ProjectIndex searchTerm={searchTerm} userId={id} />
       </div>
     </div>
   )
