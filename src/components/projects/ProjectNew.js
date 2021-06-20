@@ -24,12 +24,12 @@ function CreateNewProject() {
 
 
   return (
-    <section>
-      <div>
-        <h2> Add a New Project </h2>
+    <section className="edit-container">
+      <div className="edit-title">
+        <h1> Add Project </h1>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="edit-form"  onSubmit={handleSubmit}>
+        <div  className="form-label-container">
           <label> Project Name </label>
           <div>
             <input
@@ -65,9 +65,9 @@ function CreateNewProject() {
           </div>
           {formErrors.projectType}
         </div> */}
-        <div>
-          <button type='submit'>
-            Submit your Project
+        <div className="edit-btn-container">
+          <button className="editbtn" type='submit'>
+            Submit
           </button>
         </div>
       </form>

@@ -43,12 +43,12 @@ function ProjectEdit() {
   }
 
   return (
-    <section>
-      <div>
-        <h2> Edit this Project </h2>
+    <section className="edit-container">
+      <div className="edit-title">
+        <h1>Edit Project</h1>
       </div>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form className="edit-form" onSubmit={handleSubmit}>
+        <div className="form-label-container">
           <label htmlFor="projectName"> Project Name </label>
           <div>
             <input
@@ -72,9 +72,9 @@ function ProjectEdit() {
           </div>
           {formErrors.url}
         </div>
-        <div>
-          <button type='submit'>
-            Edit your Project !!!
+        <div className="edit-btn-container">
+          <button className="editbtn" type='submit'>
+            Submit
           </button>
         </div>
       </form>

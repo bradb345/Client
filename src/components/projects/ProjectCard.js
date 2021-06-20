@@ -2,13 +2,13 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
 
-import { faUser, faThumbsUp, faDesktop } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faThumbsUp, faDesktop, faEdit, faRemoveFormat } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { isAuthenticated, getCurrentUserId, isAuthor } from '../lib/auth'
 import { likeProject, deleteSingleProject } from '../lib/api'
 
 
-function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray }) {
+function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId, likedByArray, username }) {
   
   const [likeText, setLikeText] = React.useState('Like')
   const history = useHistory()
@@ -62,10 +62,12 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
 
               <div className="project-info">
                 <ul className="user-links">
-                  <li><a href="#"><FontAwesomeIcon icon={faUser} /> Project Name: {projectName} </a></li>
-                  <li><a href="#"><FontAwesomeIcon icon={faDesktop} /> Project Type: Game</a></li>
+                  <li><a href="#"><FontAwesomeIcon icon={faDesktop} /> Project Name: {projectName} </a></li>
+                  <li><a href="#"><FontAwesomeIcon icon={faUser} /> User: {username} </a></li>
                 </ul>
                 <br />
+                <hr/>
+                <br/>
                 <a onClick={handleLike} className="like" href="#"><FontAwesomeIcon icon={faThumbsUp} /> {likeText} {likedByArray && likedByArray.length}</a>
 
                 <div>
@@ -73,13 +75,12 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
                     <div>
                       <div>
                         <Link to={`/projects/${projectId}/edit/`}>
-              Edit your Project
+                          <a><FontAwesomeIcon icon={faEdit}/> Edit</a>
                         </Link>
                       </div>
                       <div>
-                        <button onClick={handleDelete}>
-              Delete you Project!
-                        </button>
+                        <a className="delete-project" onClick={handleDelete}><a><FontAwesomeIcon icon={faRemoveFormat}/> Delete</a>
+                        </a>
                       </div>
                     </div>
                   )}
