@@ -17,7 +17,7 @@ function ProjectIndex({ searchTerm, id }) {
     const getData = async () => {
       try {
         const response = await getAllProjects()
-        setProjects(response.data)
+        setProjects(response.data.reverse())
       } catch (error) {
         setIsError(true)
       }
@@ -62,7 +62,7 @@ function ProjectIndex({ searchTerm, id }) {
     <>
       <div className="ProjectIndex-Container">
         {isError && <Error />}
-        {isLoading && <p>...Loading</p>}
+        {isLoading && <p className="loading">...Loading</p>}
         {projects &&
           filterProjects(idToNum).map((project) => (
             <ProjectCard

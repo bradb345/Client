@@ -13,7 +13,7 @@ function UserFeed({ searchTerm }) {
       <div className="userprofile">
         <UserCard id={id} />
       </div>
-      <div >
+      <div className="userfeed-projects">
         <ProjectIndex searchTerm={searchTerm} id={id} />
       </div>
     </div>
