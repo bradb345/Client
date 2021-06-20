@@ -15,7 +15,7 @@ function ProjectIndex({ searchTerm }) {
     const getData = async () => {
       try {
         const response = await getAllProjects()
-        setProjects(response.data)
+        setProjects(response.data.reverse())
         // console.log(response.data)
         // console.log(response.data.map(project => project.projectName))
       } catch (error) {

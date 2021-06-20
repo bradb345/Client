@@ -1,17 +1,20 @@
 import UserCard from './UserCard.js'
-// import ProjectIndex from '../projects/ProjectCard.js'
+import ProjectIndex from '../projects/ProjectIndex.js'
+import { useParams } from 'react-router-dom'
 
-function UserFeed() {
+function UserFeed({ searchTerm }) {
 
-  
+
+  const { id } = useParams()
+
 
   return (
     <div className="userpage-container">
       <div className="userprofile">
-        <UserCard/>
+        <UserCard />
       </div>
-      <div className="userfeed">
-        {/* <ProjectIndex/> */}
+      <div >
+        <ProjectIndex searchTerm={searchTerm} userId={id} />
       </div>
     </div>
   )
