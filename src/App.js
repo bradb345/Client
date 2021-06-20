@@ -28,6 +28,7 @@ function App() {
           </Route>
           <Route path="/profile/:id" component={UserFeed}>
             <UserFeed/>
+            {/* <ProjectIndex/> */}
           </Route>
           <Route path="/projects/new" component={ProjectNew} />
           <Route path="/projects/:projectId/edit" component={ProjectEdit} />
