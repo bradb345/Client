@@ -63,6 +63,6 @@ export function getSingleUser(userId) {
   return axios.get(`${baseUrl}/auth/profile/${userId}/`)
 }
 
-export function editProfile(userId) {
+export function editProfile(userId, formdata) {
   return axios.put(`${baseUrl}/auth/profile/${userId}/`, formdata, headers())
 }

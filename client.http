@@ -1,6 +1,6 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYyNDgwMDY5N30.MS19YN-L4cUJlKgfcrbFIzw1ZreW179cAu_CGTniiMQ
-@id = 6
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYyNDg3ODU5OX0.JtlvwVOnCZQDkrCbirFmTXAAnQ91HLWnaSF3CgI7C2A
+@id = 2
 
 #GET ALL PROJECTS
 GET {{url}}projects/
@@ -58,8 +58,8 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"PleaseWork123@email.com",
-  "password":"pass"
+  "email":"admin@email.com",
+  "password":"admin"
 }
 
 ###
@@ -100,11 +100,11 @@ Authorization: Bearer {{token}}
 
 
 {
-  "username": "bradley11111",
-  "password": "pass",
-  "passwordConfirmation": "pass",
+  "username": "admin",
+  "password": "admin",
+  "passwordConfirmation": "admin",
   "profileImage": "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
-  "email": "brad@email.com",
+  "email": "admin@email.com",
   "favorites": [],
   "comments": [],
   "createdProject": "",
@@ -113,9 +113,13 @@ Authorization: Bearer {{token}}
   "github": "",
   "twitter": "",
   "personalsite": "",
-  "instagram": "instagram"
+  "instagram": "instagram",
+  "jobTitle": "Engineer"
 }
-#GET ALL users
+
+###
+
+# GET ALL users
 GET {{url}}auth/profile/
 
 

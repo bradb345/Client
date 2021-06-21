@@ -20,6 +20,7 @@ function ProfileEdit() {
     twitter: '',
     personalSite: '',
     instagram: '',
+    jobTitle: '',
   })
 
   React.useEffect(() => {
@@ -41,10 +42,15 @@ function ProfileEdit() {
     event.preventDefault()
 
     try {
-      await editProfile(id, formdata)
+      const obj = formdata
+      delete obj.createdProject
+      console.log(obj)
+      await editProfile(id, obj)
       history.push(`/profile/${id}`)
     } catch (error) {
+      console.log(error.response)
       setFormErrors(error.response.data)
+
     }
   }
 
@@ -79,6 +85,18 @@ function ProfileEdit() {
             />
           </div>
           {formErrors.email}
+        </div>
+        <div>
+          <label> Job Title </label>
+          <div>
+            <input
+              placeholder='eg. Junior Software Engineer'
+              name='jobTitle'
+              onChange={handleChange}
+              value={formdata.jobTitle}
+            />
+          </div>
+          {formErrors.jobTitle}
         </div>
         <div>
           <label> Password </label>

@@ -42,8 +42,8 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
           </div>
           <div className="user-deets-container">
             <div className="user-title">
-              <p>{user && user.username || username}</p>
-              <p>Junior Software Developer</p>
+              <h3>{user && user.username || username}</h3>
+              <p>{user && user.jobTitle }</p>
             </div>
             <div className="user-site link">
               {/* <a href={user && user.personalsite}>{user && user.personalsite}</a> */}
@@ -61,9 +61,9 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
                 <div />
               }
             </Link>
-            <Link to={`/profile/${id}/edit/`}>
+            <Link to={`/auth/profile/${id}/edit/`}>
               {isAuthor(user && user.id) ?
-                <button className="editProfile" ><FontAwesomeIcon icon={faEdit}/> Edit
+                <button className="editProfile" ><FontAwesomeIcon icon={faEdit}/> Edit Profile
                 </button>
                 :
                 <div/>

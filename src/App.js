@@ -11,6 +11,7 @@ import UserIndex from './components/users/UserIndex.js'
 import UserCard from './components/users/UserCard.js'
 
 
+
 function App() {
 
   const [isLoginForm, setIsLoginForm] = React.useState(true)
@@ -20,19 +21,23 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/auth" component={AuthPage}>
+
+        <Route exact path="/auth" component={AuthPage}>
           <AuthPage isLoginForm={isLoginForm} setIsLoginForm={setIsLoginForm} />
         </Route>
 
         <>
           <NavBar setIsLoginForm={setIsLoginForm} setSearchTerm={setSearchTerm} />
+          <Route path="/auth/profile/:id/edit" component={UserEdit}>
+            <UserEdit />
+          </Route>
           <Route exact path="/" component={Feed}>
             <Feed searchTerm={searchTerm} />
           </Route>
+
           <Route path="/profile/:id" component={UserFeed}>
             <UserFeed searchTerm={searchTerm}/>
           </Route>
-          <Route path="/profile/:id/edit" component={UserEdit}/>
           <Route path="/projects/new" component={ProjectNew} />
           <Route path="/projects/:projectId/edit" component={ProjectEdit} />
           <Route path="/users" component={UserCard}>
