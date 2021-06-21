@@ -66,12 +66,12 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
           <hr />
           <br />
           <div className="user-site-link">
-            <p><FontAwesomeIcon icon={faSchool} /> Cohort : <span>{user && user.gacohort || gacohort }</span></p>
-            <p><FontAwesomeIcon icon={faCodeBranch} /> GitHub : <span>{user && user.github || github }</span></p>
+            <p><FontAwesomeIcon icon={faSchool} /> Cohort : <span>{user && user.gacohort || gacohort}</span></p>
+            <p><FontAwesomeIcon icon={faCodeBranch} /> GitHub : <span> { user && user.github || github }</span></p>
             <p><FontAwesomeIcon icon={faBriefcase} /> LinkedIn : <span>{user && user.linkedin || linkedin}</span></p>
             <p><FontAwesomeIcon icon={faDesktop} /> My Site : <span>{user && user.personalsite || personalsite}</span></p>
             <p><FontAwesomeIcon icon={faDove} /> Twitter : <span>{user && user.twitter || twitter }</span></p>
-            <p><FontAwesomeIcon icon={faCameraRetro} /> Instagram : <span>{user && user.instagram || instagram}</span></p>
+            <p><FontAwesomeIcon icon={faCameraRetro} /> Instagram : <span><a href={`${user.instagram}`} target="_blank" rel="noreferrer"> {user && user.instagram || instagram}</a></span></p>
           </div>
         </div>
       </div>

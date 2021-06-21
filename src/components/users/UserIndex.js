@@ -24,7 +24,7 @@ function UserIndex() {
     <div className="ProjectIndex-Container">
       { users && 
         users.map((user) => (
-
+          
           <UserCard
             key={user.id}
             profileImage={user.profileImage}
@@ -36,6 +36,7 @@ function UserIndex() {
             twitter={user.twitter}
             instagram={user.instagram}
           />
+        
         ))
       }
     </div>
