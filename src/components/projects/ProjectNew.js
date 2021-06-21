@@ -24,11 +24,8 @@ function CreateNewProject() {
 
 
   return (
-    <section className="edit-container">
-      <div className="edit-title">
-        <h1> Add Project </h1>
-      </div>
-      <form className="edit-form"  onSubmit={handleSubmit}>
+    <section className="Project-edit-container">
+      <form className="project-edit-form"  onSubmit={handleSubmit}>
         <div  className="form-label-container">
           <label> Project Name </label>
           <div>

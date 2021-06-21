@@ -43,11 +43,8 @@ function ProjectEdit() {
   }
 
   return (
-    <section className="edit-container">
-      <div className="edit-title">
-        <h1>Edit Project</h1>
-      </div>
-      <form className="edit-form" onSubmit={handleSubmit}>
+    <section className="Project-edit-container">
+      <form className="project-edit-form" onSubmit={handleSubmit}>
         <div className="form-label-container">
           <label htmlFor="projectName"> Project Name </label>
           <div>
