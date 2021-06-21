@@ -8,9 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { useParams } from 'react-router-dom'
 
 
-function UserCard({ id, profileImage , username, gacohort, github, linkedin, instagram, personalsite, twitter }) {
+function UserCard({ id, profileImage , username, gacohort, github, linkedin, instagram, personalsite, twitter, userId }) {
 
   // const { id } = useParams()
+
+  
 
   const [user, setUser] = React.useState(null)
 
@@ -37,8 +39,9 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
       <div className="mainUser-card">
         <div className="user-card-container">
           <div className="user-profile-image">
-
-            <img src={user && user.profileImage || profileImage} />
+            <Link to={`/profile/${userId}`}>
+              <img src={user && user.profileImage || profileImage} />
+            </Link>
           </div>
           <div className="user-deets-container">
             <div className="user-title">

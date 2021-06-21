@@ -36,6 +36,7 @@ function UserIndex({ searchTerm }) {
 
           <UserCard
             key={user.id}
+            userId={user.id}
             profileImage={user.profileImage}
             username={user.username}
             gacohort={user.gacohort}
