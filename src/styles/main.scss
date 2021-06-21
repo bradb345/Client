@@ -9,7 +9,7 @@
 }
 
 body {
-  
+
   height: 100%;
   background-image: linear-gradient(black, grey);
   font-family: acumin-pro, sans-serif;
@@ -141,7 +141,7 @@ a:hover{
   .button.secondary{
     background:transparent;
   }
-  
+
   .button a:hover{
     transition:all 0.25s;
     background-color:black;
@@ -188,7 +188,7 @@ a:hover{
   margin: 7px 15px;
   // background-color: #222;
   padding: 10px 0 10px 0;
-  
+
 }
 
 .search-navbar {
@@ -212,7 +212,7 @@ input:focus {
 
 .search-navbar {
   display:flex;
-  
+
 }
 
 .search-item-container {
@@ -263,7 +263,7 @@ h1 {
 iframe {
   border:none;
   margin: 5px 15px;
-  
+
 }
 
 .project-body {
@@ -360,7 +360,7 @@ background-image: url('http://thevinylfactory.com/wp-content/uploads/2021/05/MF-
   flex-direction: column;
 }
 
-.btn-container button {  
+.btn-container button {
   height:30px;
   margin: 5px 15px;
   background-color: #444;
@@ -370,7 +370,7 @@ background-image: url('http://thevinylfactory.com/wp-content/uploads/2021/05/MF-
 
 }
 
-.btn-container button:hover { 
+.btn-container button:hover {
 background-color:red;
 color:black;
 
@@ -381,6 +381,10 @@ color:black;
   text-align: center;
 }
 
+.editProfile {
+  width:360px;
+  text-align: center;
+}
 
 .userpage-container {
   display : flex;

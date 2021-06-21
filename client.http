@@ -1,6 +1,6 @@
 @url=http://localhost:8000/api/
-@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYyNDU1NTk1N30.vF4gqT_oC0Yk8By3a8mCm-AvEEGIcpg3ZSP2_FGKrHc
-@id = 3
+@token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYyNDgwMDY5N30.MS19YN-L4cUJlKgfcrbFIzw1ZreW179cAu_CGTniiMQ
+@id = 6
 
 #GET ALL PROJECTS
 GET {{url}}projects/
@@ -26,7 +26,7 @@ content-type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "projectName":"High Focus",
+  "projectName":"High Focus12332",
   "url":"https://www.high-focus.com/home/"
 
 }
@@ -38,8 +38,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"PleaseWork",
-"email":"PleaseWork@email.com",
+"username":"PleaseWork123",
+"email":"PleaseWork123@email.com",
 "password":"pass",
 "passwordConfirmation":"pass",
 "profileImage":"https://i.imgflip.com/47n5zy.png",
@@ -58,7 +58,7 @@ POST {{url}}auth/login/
 content-type:application/json
 
 {
-  "email":"MainTest@email.com",
+  "email":"PleaseWork123@email.com",
   "password":"pass"
 }
 
@@ -92,6 +92,29 @@ Authorization: Bearer {{token}}
 #GET A SINGLE USER
 GET {{url}}auth/profile/{{id}}/
 
+###
+
+PUT {{url}}auth/profile/{{id}}/
+content-type: application/json
+Authorization: Bearer {{token}}
+
+
+{
+  "username": "bradley11111",
+  "password": "pass",
+  "passwordConfirmation": "pass",
+  "profileImage": "https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png",
+  "email": "brad@email.com",
+  "favorites": [],
+  "comments": [],
+  "createdProject": "",
+  "gacohort": "",
+  "linkedin": "",
+  "github": "",
+  "twitter": "",
+  "personalsite": "",
+  "instagram": "instagram"
+}
 
 
 

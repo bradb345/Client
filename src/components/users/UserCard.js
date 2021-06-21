@@ -3,7 +3,7 @@ import { getSingleUser } from '../lib/api'
 import { Link } from 'react-router-dom'
 import { isAuthor } from '../lib/auth'
 
-import { faEnvelope, faPlusCircle, faCameraRetro, faCodeBranch, faBriefcase, faDesktop, faDove, faPlus, faSchool } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPlusCircle, faCameraRetro, faCodeBranch, faBriefcase, faDesktop, faDove, faPlus, faSchool, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useParams } from 'react-router-dom'
 
@@ -19,7 +19,7 @@ function UserCard() {
       try {
         const response = await getSingleUser(id)
         setUser(response.data)
-        
+
 
       } catch (error) {
         console.log(error)
@@ -30,7 +30,7 @@ function UserCard() {
     getData()
   }, [id])
 
-  
+
 
   return (
     <>
@@ -55,8 +55,16 @@ function UserCard() {
             <button className="hire-btn"><FontAwesomeIcon icon={faEnvelope} /> Hire Me</button>
             <Link to="/projects/new">
 
-              {isAuthor(user && user.id) ? 
+              {isAuthor(user && user.id) ?
                 <button className="addProject"><FontAwesomeIcon icon={faPlus} /> Add Project</button>
+                :
+                <div/>
+              }
+            </Link>
+            <Link to={`/profile/${id}/edit/`}>
+              {isAuthor(user && user.id) ?
+                <button className="editProfile" ><FontAwesomeIcon icon={faEdit}/> Edit
+                </button>
                 :
                 <div/>
               }
@@ -72,6 +80,11 @@ function UserCard() {
             <p><FontAwesomeIcon icon={faDesktop}/> My Site : <span>{user && user.personalsite}</span></p>
             <p><FontAwesomeIcon icon={faDove}/> Twitter : <span>{user && user.twitter}</span></p>
             <p><FontAwesomeIcon icon={faCameraRetro}/> Instagram : <span>{user && user.instagram}</span></p>
+            <div>
+              <Link to={`/profile/${id}/edit/`}>
+                <a><FontAwesomeIcon icon={faEdit}/> Edit</a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -59,3 +59,7 @@ export function registerUser(formdata) {
 export function getSingleUser(userId) {
   return axios.get(`${baseUrl}/auth/profile/${userId}/`)
 }
+
+export function editProfile(userId) {
+  return axios.put(`${baseUrl}/auth/profile/${userId}/`, formdata, headers())
+}

@@ -6,6 +6,7 @@ import AuthPage from './components/auth/AuthPage.js'
 import UserFeed from './components/users/UserFeed.js'
 import ProjectNew from './components/projects/ProjectNew.js'
 import ProjectEdit from './components/projects/projectEdit.js'
+import UserEdit from './components/users/UserEdit.js'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/profile/:id" component={UserFeed}>
             <UserFeed searchTerm={searchTerm}/>
           </Route>
+          <Route path="/profile/:id/edit" component={UserEdit}/>
           <Route path="/projects/new" component={ProjectNew} />
           <Route path="/projects/:projectId/edit" component={ProjectEdit} />
         </>
