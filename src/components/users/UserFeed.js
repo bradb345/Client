@@ -4,17 +4,17 @@ import { useParams } from 'react-router-dom'
 
 function UserFeed({ searchTerm }) {
 
-
   const { id } = useParams()
 
+  
 
   return (
     <div className="userpage-container">
       <div className="userprofile">
-        <UserCard />
+        <UserCard id={id} />
       </div>
-      <div >
-        <ProjectIndex searchTerm={searchTerm} userId={id} />
+      <div className="userfeed-projects">
+        <ProjectIndex searchTerm={searchTerm} id={id} />
       </div>
     </div>
   )

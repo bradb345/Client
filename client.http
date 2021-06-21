@@ -115,6 +115,9 @@ Authorization: Bearer {{token}}
   "personalsite": "",
   "instagram": "instagram"
 }
+#GET ALL users
+GET {{url}}auth/profile/
+
 
 
 

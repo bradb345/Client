@@ -53,6 +53,9 @@ export function registerUser(formdata) {
   return axios.post(`${baseUrl}/auth/register/`, formdata)
 }
 
+export function getAllUsers() {
+  return axios.get(`${baseUrl}/auth/profile/`)
+}
 
 //*OWNER(USER) REQUEST
 

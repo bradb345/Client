@@ -4,20 +4,20 @@ import ProjectCard from './ProjectCard.js'
 import { getAllProjects } from '../lib/api.js'
 import Error from '../common/Error.js'
 
-function ProjectIndex({ searchTerm }) {
+
+function ProjectIndex({ searchTerm, id }) {
 
   const [projects, setProjects] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
   const isLoading = !projects && !isError
 
+  const idToNum = Number(id)
 
   React.useEffect(() => {
     const getData = async () => {
       try {
         const response = await getAllProjects()
         setProjects(response.data.reverse())
-        // console.log(response.data)
-        // console.log(response.data.map(project => project.projectName))
       } catch (error) {
         setIsError(true)
       }
@@ -40,29 +40,37 @@ function ProjectIndex({ searchTerm }) {
     setProjects(updatedProjects)
   }
 
-  const filterProjects = (projects) => {
+  const filterProjects = (id) => {
     return (
       projects.filter(project => {
-        if (projects) {
+        if (id) {
           return (
-            project.projectName.toLowerCase().includes(searchTerm)
+            (project.projectName.toLowerCase().includes(searchTerm)) &&
+            (project.owner.id === id)
           )
         }
+        return (
+          (project.projectName.toLowerCase().includes(searchTerm) ||
+          project.owner.username.toLowerCase().includes(searchTerm))
+        )
       })
     )
   }
 
+
+
   return (
     <>
       <div className="ProjectIndex-Container">
-        {isError && <Error/>}
-        {isLoading && <p>...Loading</p>}
+        {isError && <Error />}
+        {isLoading && <p className="loading">...Loading</p>}
         {projects &&
-          filterProjects(projects).map((project) => (
+          filterProjects(idToNum).map((project) => (
             <ProjectCard
               key={project.id}
               url={project.url}
               projectName={project.projectName}
+              username={project.owner.username}
               owner={project.owner.id}
               handleUpdateProjects={handleUpdateProjects}
               projectId={project.id}
@@ -70,7 +78,6 @@ function ProjectIndex({ searchTerm }) {
             />
 
           ))}
-
       </div>
     </>
   )
