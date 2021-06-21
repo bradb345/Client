@@ -8,9 +8,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { useParams } from 'react-router-dom'
 
 
-function UserCard({ id, profileImage , username, gacohort, github, linkedin, instagram, personalsite, twitter }) {
+function UserCard({ id, profileImage , username, gacohort, github, linkedin, instagram, personalsite, twitter, userId }) {
 
   // const { id } = useParams()
+
+  
 
   const [user, setUser] = React.useState(null)
 
@@ -37,8 +39,9 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
       <div className="mainUser-card">
         <div className="user-card-container">
           <div className="user-profile-image">
-
-            <img src={user && user.profileImage || profileImage} />
+            <Link to={`/profile/${userId}`}>
+              <img src={user && user.profileImage || profileImage} />
+            </Link>
           </div>
           <div className="user-deets-container">
             <div className="user-title">
@@ -74,12 +77,12 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
           <hr />
           <br />
           <div className="user-site-link">
-            <p><FontAwesomeIcon icon={faSchool} /> Cohort : <span>{user && user.gacohort || gacohort }</span></p>
-            <p><FontAwesomeIcon icon={faCodeBranch} /> GitHub : <span>{user && user.github || github }</span></p>
-            <p><FontAwesomeIcon icon={faBriefcase} /> LinkedIn : <span>{user && user.linkedin || linkedin}</span></p>
-            <p><FontAwesomeIcon icon={faDesktop} /> My Site : <span>{user && user.personalsite || personalsite}</span></p>
-            <p><FontAwesomeIcon icon={faDove} /> Twitter : <span>{user && user.twitter || twitter }</span></p>
-            <p><FontAwesomeIcon icon={faCameraRetro} /> Instagram : <span>{user && user.instagram || instagram}</span></p>
+            <p><FontAwesomeIcon icon={faSchool} /> Cohort : <a href={`http://${user && user.github}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.gacohort || gacohort}</span></a></p>
+            <p><FontAwesomeIcon icon={faCodeBranch} /> GitHub : <a href={`http://${user && user.github}`} target="_blank" rel="noopener noreferrer"><span> { user && user.github || github }</span></a></p>
+            <p><FontAwesomeIcon icon={faBriefcase} /> LinkedIn : <a href={`http://${user && user.linkedin}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.linkedin || linkedin}</span></a></p>
+            <p><FontAwesomeIcon icon={faDesktop} /> My Site : <a href={`http://${user && user.personalsite}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.personalsite || personalsite}</span></a></p>
+            <p><FontAwesomeIcon icon={faDove} /> Twitter : <a href={`http://${user && user.twitter}`} target="_blank" rel="noopener noreferrer"><span>{user && user.twitter || twitter }</span></a></p>
+            <p><FontAwesomeIcon icon={faCameraRetro} /> Instagram :<a href={`http://${user && user.instagram}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.instagram || instagram}</span></a></p>
           </div>
         </div>
       </div>

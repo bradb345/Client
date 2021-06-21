@@ -2,7 +2,7 @@ import React from 'react'
 import UserCard from '../users/UserCard.js'
 import { getAllUsers } from '../lib/api'
 
-function UserIndex() {
+function UserIndex({ searchTerm }) {
 
   const [users, setUsers] = React.useState(null)
 
@@ -17,16 +17,26 @@ function UserIndex() {
       }
     }
     getData()
-  }, [])
+  }, [searchTerm])
+
+  const filterUsers = () => {
+    return (
+      users.filter(user => {
+        return (
+          (user.username.toLowerCase().includes(searchTerm))
+        )
+      }))
+  }
 
   return (
 
     <div className="ProjectIndex-Container">
       { users &&
-        users.map((user) => (
+        filterUsers().map((user) => (
 
           <UserCard
             key={user.id}
+            userId={user.id}
             profileImage={user.profileImage}
             username={user.username}
             gacohort={user.gacohort}
@@ -37,6 +47,7 @@ function UserIndex() {
             instagram={user.instagram}
             // jobTitle={user.jobTitle}
           />
+
         ))
       }
     </div>

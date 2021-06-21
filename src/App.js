@@ -41,7 +41,7 @@ function App() {
           <Route path="/projects/new" component={ProjectNew} />
           <Route path="/projects/:projectId/edit" component={ProjectEdit} />
           <Route path="/users" component={UserCard}>
-            <UserIndex/>
+            <UserIndex searchTerm={searchTerm} />
           </Route>
         </>
       </Switch>
