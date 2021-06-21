@@ -12,7 +12,7 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
 
   // const { id } = useParams()
 
-  
+
 
   const [user, setUser] = React.useState(null)
 
@@ -46,7 +46,7 @@ function UserCard({ id, profileImage , username, gacohort, github, linkedin, ins
           <div className="user-deets-container">
             <div className="user-title">
               <h3>{user && user.username || username}</h3>
-              <p>{user && user.jobTitle }</p>
+              <h4>{user && user.jobTitle }</h4>
             </div>
             <div className="user-site link">
               {/* <a href={user && user.personalsite}>{user && user.personalsite}</a> */}
