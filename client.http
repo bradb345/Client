@@ -1,6 +1,6 @@
 @url=http://localhost:8000/api/
 @token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYyNDg3ODU5OX0.JtlvwVOnCZQDkrCbirFmTXAAnQ91HLWnaSF3CgI7C2A
-@id = 2
+@id = 14
 
 #GET ALL PROJECTS
 GET {{url}}projects/
@@ -38,8 +38,8 @@ POST {{url}}auth/register/
 content-type:application/json
 
 {
-"username":"PleaseWork123",
-"email":"PleaseWork123@email.com",
+"username":"ErrorTest",
+"email":"ErrorTest@email.com",
 "password":"pass",
 "passwordConfirmation":"pass",
 "profileImage":"https://i.imgflip.com/47n5zy.png",
@@ -48,7 +48,8 @@ content-type:application/json
 "github":"www.github.com",
 "twitter":"www.twitter.com",
 "instagram":"www.instagram.com",
-"personal_site":"www.google.com"
+"personal_site":"www.google.com",
+"jobTitle":"Junior Dev"
 
 }
 

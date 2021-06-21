@@ -24,6 +24,7 @@ function Register({ setIsLoginForm }) {
       history.push('/')
     } catch (err) {
       setFormErrors(err.response.data.errors)
+      // console.log(err.response.data)
     }
   }
 
@@ -31,6 +32,7 @@ function Register({ setIsLoginForm }) {
     setIsLoginForm(true)
   }
 
+  // console.log(formErrors)
   return (
 
 

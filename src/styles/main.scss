@@ -111,7 +111,7 @@ a:hover{
   top:-5px;
 }
 
-//Tablet Menues
+//Tablet Menus
 @media all and (min-width:468px) {
   .menu{
     justify-content:center;
@@ -354,6 +354,7 @@ background-image: url('http://thevinylfactory.com/wp-content/uploads/2021/05/MF-
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   line-height:2rem;
 }
 
@@ -396,13 +397,6 @@ color:black;
   width: 500px;
 }
 
-// .userfeed {
-//   flex:3;
-//   display:flex;
-//   flex-direction: row;
-//   flex-wrap: wrap;
-// }
-
 .ProjectIndex-Container {
   display: flex;
   flex-wrap: wrap;
@@ -421,51 +415,75 @@ color:black;
 }
 
 
-.edit-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height:100vh;
-}
+// .edit-container {
+//   display: flex;
+//   text-align:center;
+//   align-items: center;
+//   flex-direction: row;
+//   height:100vh;
+//   // background: black;
+// }
 
 .edit-container h1 {
 
   color: white;
   font-size: 36px;
   margin-top: 50px;
+  display: flex;
+  justify-content:center;
 
+}
+
+
+.master-container {
+  display: flex;
+  flex-direction:column;
 }
 
 .edit-form {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid white;
-  height: 400px;
-  width: 300px;
-  color:white;
-  margin: 20px;
+  flex-direction: row;
+  justify-content:center;
 }
-
-.form-label-container {
-  // padding: 10px;
-}
+//   text-align: center;
+//   justify-content:center;
+//   align-items: center;
+//   height:fit-content;
+//   width: 800px;
+//   color:white;
+//   // margin-left: 420px;
+//   margin-bottom: 50px;
+//   margin-top: 50px;
+// }
 
 .edit-form input {
-  text-align: center;
-  width:200px;
+  // text-align: center;
+  width:400px;
   height: 40px;
   padding: 10px;
   margin: 40px;
   border-radius: 50rem;
 }
 
+.edit-form input:focus {
+  background-color:rgb(233, 114, 114);
+  border-color:white;
+}
 .edit-form label {
+  display: flex;
   font-size: 20px;
+  color:white;
+  justify-content: center;
+  padding:12px;
 }
 
 .edit-btn-container {
-  margin: 50px;
+  display:flex;
+  justify-content:center;
+  margin-bottom: 10px;
+  // margin: 10px;
+  // margin-right: 400px;
+
 }
 
 .editbtn {
@@ -498,4 +516,52 @@ color:black;
   height: 100vh;
   color: white;
   font-size: 36px;
+}
+
+.edit-column-1 {
+
+// border: 1px solid white;
+// padding: 25px 0px;
+}
+
+.edit-column-2 {
+  // border: 1px solid white;
+  // margin: 40px;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+}
+
+.Project-edit-container {
+  display:flex;
+  flex-direction: column;
+  height:100vh;
+}
+.project-edit-form {
+
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content:center;
+  align-items: center;
+  height:fit-content;
+}
+.project-edit-form label {
+  display: flex;
+  font-size: 20px;
+  color:white;
+  justify-content: center;
+  padding:12px;
+}
+.project-edit-form input {
+  // text-align: center;
+  width:400px;
+  height: 40px;
+  padding: 10px;
+  margin: 40px;
+  border-radius: 50rem;
+}
+.project-edit-form input:focus {
+  background-color:rgb(233, 114, 114);
+  border-color:white;
 }

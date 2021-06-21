@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard.js'
 import { getAllProjects } from '../lib/api.js'
 import Error from '../common/Error.js'
 
+import Loader from 'react-loader-spinner'
 
 function ProjectIndex({ searchTerm, id }) {
 
@@ -63,7 +64,13 @@ function ProjectIndex({ searchTerm, id }) {
     <>
       <div className="ProjectIndex-Container">
         {isError && <Error />}
-        {isLoading && <p className="loading">...Loading</p>}
+        {isLoading && <Loader
+          type="TailSpin"
+          color="#F70C0C"
+          height={80}
+          width={80} //3 secs
+        />}
+
         {projects &&
           filterProjects(idToNum).map((project) => (
             <ProjectCard

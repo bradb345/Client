@@ -26,7 +26,6 @@ function ProfileEdit() {
   React.useEffect(() => {
     const getData = async () => {
       try {
-        console.log('insideUseEffect')
         const res = await getSingleUser(id)
         setFormdata(res.data)
         console.log(res.data)
@@ -57,162 +56,167 @@ function ProfileEdit() {
   console.log(formdata)
 
   return (
-    <section className="edit-container">
-      <div className="edit-title">
-        <h1>Edit Profile</h1>
-      </div>
-      <form className="edit-form" onSubmit={handleSubmit}>
-        <div className="form-label-container">
-          <label htmlFor="projectName"> Username </label>
-          <div>
-            <input
-              placeholder='Username'
-              name='username'
-              onChange={handleChange}
-              value={formdata.username}
-            />
+    <div className="master-container">
+      <section className="edit-container">
+      
+        <form className="edit-form" onSubmit={handleSubmit}>
+          <div className="edit-column-1">
+            <div className="form-label-container">
+              <label htmlFor="projectName"> Username </label>
+              <div>
+                <input
+                  placeholder='Username'
+                  name='username'
+                  onChange={handleChange}
+                  value={formdata.username}
+                />
+              </div>
+              {formErrors.username && <p>{formErrors.username}</p>}
+            </div>
+            <div>
+              <label> Email </label>
+              <div>
+                <input
+                  placeholder='Email'
+                  name='email'
+                  onChange={handleChange}
+                  value={formdata.email}
+                />
+              </div>
+              {formErrors.email}
+            </div>
+            <div>
+              <label> Job Title </label>
+              <div>
+                <input
+                  placeholder='eg. Junior Software Engineer'
+                  name='jobTitle'
+                  onChange={handleChange}
+                  value={formdata.jobTitle}
+                />
+              </div>
+              {formErrors.jobTitle}
+            </div>
+            <div>
+              <label> Password </label>
+              <div>
+                <input
+                  placeholder='password'
+                  name='password'
+                  onChange={handleChange}
+                  value={formdata.password}
+                />
+              </div>
+              {formErrors.password}
+            </div>
+            <div>
+              <label> Password Confirmation </label>
+              <div>
+                <input
+                  placeholder='Password Confirmation'
+                  name='passwordConfirmation'
+                  onChange={handleChange}
+                  value={formdata.passwordConfirmation}
+                />
+              </div>
+              {formErrors.passwordConfirmation}
+            </div>
+            <div>
+              <label> Profile Image </label>
+              <div>
+                <input
+                  placeholder='Profile Image'
+                  name='profileImage'
+                  onChange={handleChange}
+                  value={formdata.profileImage}
+                />
+              </div>
+              {formErrors.profileImage}
+            </div>
           </div>
-          {formErrors.username && <p>{formErrors.username}</p>}
-        </div>
-        <div>
-          <label> Email </label>
-          <div>
-            <input
-              placeholder='Email'
-              name='email'
-              onChange={handleChange}
-              value={formdata.email}
-            />
-          </div>
-          {formErrors.email}
-        </div>
-        <div>
-          <label> Job Title </label>
-          <div>
-            <input
-              placeholder='eg. Junior Software Engineer'
-              name='jobTitle'
-              onChange={handleChange}
-              value={formdata.jobTitle}
-            />
-          </div>
-          {formErrors.jobTitle}
-        </div>
-        <div>
-          <label> Password </label>
-          <div>
-            <input
-              placeholder='password'
-              name='password'
-              onChange={handleChange}
-              value={formdata.password}
-            />
-          </div>
-          {formErrors.password}
-        </div>
-        <div>
-          <label> Password Confirmation </label>
-          <div>
-            <input
-              placeholder='Password Confirmation'
-              name='passwordConfirmation'
-              onChange={handleChange}
-              value={formdata.passwordConfirmation}
-            />
-          </div>
-          {formErrors.passwordConfirmation}
-        </div>
-        <div>
-          <label> Profile Image </label>
-          <div>
-            <input
-              placeholder='Profile Image'
-              name='profileImage'
-              onChange={handleChange}
-              value={formdata.profileImage}
-            />
-          </div>
-          {formErrors.profileImage}
-        </div>
-        <div>
-          <label> GA Cohort </label>
-          <div>
-            <input
-              placeholder='GA Cohort'
-              name='gaCohort'
-              onChange={handleChange}
-              value={formdata.gaCohort}
-            />
-          </div>
-          {formErrors.gaCohort}
-        </div>
-        <div>
-          <label> LinkedIn </label>
-          <div>
-            <input
-              placeholder='LinkedIn'
-              name='linkedin'
-              onChange={handleChange}
-              value={formdata.linkedin}
-            />
-          </div>
-          {formErrors.linkedin}
-        </div>
-        <div>
-          <label> Github </label>
-          <div>
-            <input
-              placeholder='Github'
-              name='github'
-              onChange={handleChange}
-              value={formdata.github}
-            />
-          </div>
-          {formErrors.github}
-        </div>
-        <div>
-          <label> Twitter </label>
-          <div>
-            <input
-              placeholder='Twitter'
-              name='twitter'
-              onChange={handleChange}
-              value={formdata.twitter}
-            />
-          </div>
-          {formErrors.twitter}
-        </div>
-        <div>
-          <label> Personal Site </label>
-          <div>
-            <input
-              placeholder='Personal Site'
-              name='personalSite'
-              onChange={handleChange}
-              value={formdata.personalSite}
-            />
-          </div>
-          {formErrors.personalSite}
-        </div>
-        <div>
-          <label> Instagram </label>
-          <div>
-            <input
-              placeholder='Instagram'
-              name='instagram'
-              onChange={handleChange}
-              value={formdata.instagram}
-            />
-          </div>
-          {formErrors.instagram}
-        </div>
-        <div className="edit-btn-container">
-          <button className="editbtn" type='submit'>
+          <div className="edit-column-2">
+            <div>
+              <label> GA Cohort </label>
+              <div>
+                <input
+                  placeholder='GA Cohort'
+                  name='gaCohort'
+                  onChange={handleChange}
+                  value={formdata.gaCohort}
+                />
+              </div>
+              {formErrors.gaCohort}
+            </div>
+            <div>
+              <label> LinkedIn </label>
+              <div>
+                <input
+                  placeholder='LinkedIn'
+                  name='linkedin'
+                  onChange={handleChange}
+                  value={formdata.linkedin}
+                />
+              </div>
+              {formErrors.linkedin}
+            </div>
+            <div>
+              <label> Github </label>
+              <div>
+                <input
+                  placeholder='Github'
+                  name='github'
+                  onChange={handleChange}
+                  value={formdata.github}
+                />
+              </div>
+              {formErrors.github}
+            </div>
+            <div>
+              <label> Twitter </label>
+              <div>
+                <input
+                  placeholder='Twitter'
+                  name='twitter'
+                  onChange={handleChange}
+                  value={formdata.twitter}
+                />
+              </div>
+              {formErrors.twitter}
+            </div>
+            <div>
+              <label> Personal Site </label>
+              <div>
+                <input
+                  placeholder='Personal Site'
+                  name='personalSite'
+                  onChange={handleChange}
+                  value={formdata.personalSite}
+                />
+              </div>
+              {formErrors.personalSite}
+            </div>
+            <div>
+              <label> Instagram </label>
+              <div>
+                <input
+                  placeholder='Instagram'
+                  name='instagram'
+                  onChange={handleChange}
+                  value={formdata.instagram}
+                />
+              </div>
+              {formErrors.instagram}
+            </div>
+            <div className="edit-btn-container">
+              <button className="editbtn" type='submit'>
             Submit
-          </button>
-        </div>
-      </form>
-    </section>
+              </button>  
+            </div>
+          </div>
+        </form>
+      </section>
+      
+    </div>
   )
 }
 
