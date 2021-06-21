@@ -39,8 +39,9 @@ function ProjectCard({ projectName, url, owner, handleUpdateProjects, projectId,
   }
 
   const handleDelete = async () => {
+    confirm('Are you sure you want to delete this project?')
     await deleteSingleProject(projectId)
-    history.push('/')
+    location.reload()
   }
   
   return (
