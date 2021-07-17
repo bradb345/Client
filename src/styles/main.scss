@@ -11,7 +11,7 @@
 body {
 
   height: 100%;
-  background-image: linear-gradient(black, grey);
+  background-color: rgb(46, 46, 46);
   font-family: acumin-pro, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -27,12 +27,12 @@ ul {
 }
 
 a {
-  color: white;
+  color: rgb(103, 103, 103);
   text-decoration: none;
 }
 
 a:hover{
-  color: #00FFFF;
+  color: #00a6ff;
 }
 
 .home a {
