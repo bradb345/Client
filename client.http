@@ -1,6 +1,6 @@
 @url=http://localhost:8000/api/
 @token= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYyNDg3ODU5OX0.JtlvwVOnCZQDkrCbirFmTXAAnQ91HLWnaSF3CgI7C2A
-@id = 14
+@id = 3
 
 #GET ALL PROJECTS
 GET {{url}}projects/

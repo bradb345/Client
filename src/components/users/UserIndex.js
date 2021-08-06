@@ -6,10 +6,37 @@ import Error from '../common/Error.js'
 
 import Loader from 'react-loader-spinner'
 
+import { Container, Grid } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles((theme) => ({
+
+
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  root: {
+    flexGrow: 1,
+  },
+
+
+}))
+
 function UserIndex({ searchTerm }) {
   const [users, setUsers] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
   const isLoading = !users && !isError
+
+  const classes = useStyles()
 
   React.useEffect(() => {
     const getData = async () => {
@@ -36,7 +63,7 @@ function UserIndex({ searchTerm }) {
 
   return (
     <>
-      <div className="ProjectIndex-Container">
+      <Container className={classes.cardGrid} maxWidth="lg">
         {isError && <Error />}
         {isLoading && <Loader
           type="TailSpin"
@@ -46,7 +73,7 @@ function UserIndex({ searchTerm }) {
         />}
 
 
-        <div className="ProjectIndex-Container">
+        <Grid container spacing={2}>
           { users &&
         filterUsers().map((user) => (
 
@@ -66,8 +93,8 @@ function UserIndex({ searchTerm }) {
 
         ))
           }
-        </div>
-      </div>
+        </Grid>
+      </Container>
     </>
   )
 }

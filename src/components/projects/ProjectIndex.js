@@ -5,8 +5,35 @@ import { getAllProjects } from '../lib/api.js'
 import Error from '../common/Error.js'
 
 import Loader from 'react-loader-spinner'
+import { Container, Grid } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+
+
+const useStyles = makeStyles((theme) => ({
+
+
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  root: {
+    flexGrow: 1,
+  },
+
+
+}))
 
 function ProjectIndex({ searchTerm, id }) {
+
+  const classes = useStyles()
 
   const [projects, setProjects] = React.useState(null)
   const [isError, setIsError] = React.useState(false)
@@ -52,7 +79,7 @@ function ProjectIndex({ searchTerm, id }) {
         }
         return (
           (project.projectName.toLowerCase().includes(searchTerm) ||
-          project.owner.username.toLowerCase().includes(searchTerm))
+            project.owner.username.toLowerCase().includes(searchTerm))
         )
       })
     )
@@ -62,7 +89,7 @@ function ProjectIndex({ searchTerm, id }) {
 
   return (
     <>
-      <div className="ProjectIndex-Container">
+      <Container className={classes.cardGrid} maxWidth="lg">
         {isError && <Error />}
         {isLoading && <Loader
           type="TailSpin"
@@ -71,21 +98,23 @@ function ProjectIndex({ searchTerm, id }) {
           width={80} //3 secs
         />}
 
-        {projects &&
-          filterProjects(idToNum).map((project) => (
-            <ProjectCard
-              key={project.id}
-              url={project.url}
-              projectName={project.projectName}
-              username={project.owner.username}
-              owner={project.owner.id}
-              handleUpdateProjects={handleUpdateProjects}
-              projectId={project.id}
-              likedByArray={project.favoritedBy}
-            />
+        <Grid container spacing={2}>
+          {projects &&
+            filterProjects(idToNum).map((project) => (
+              <ProjectCard
+                key={project.id}
+                url={project.url}
+                projectName={project.projectName}
+                username={project.owner.username}
+                owner={project.owner.id}
+                handleUpdateProjects={handleUpdateProjects}
+                projectId={project.id}
+                likedByArray={project.favoritedBy}
+              />
 
-          ))}
-      </div>
+            ))}
+        </Grid>
+      </Container>
     </>
   )
 
