@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
 
 
-import Link from '@material-ui/core/Link'
+
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
@@ -89,9 +89,9 @@ function Login({ setIsLoginForm }) {
           className={classes.form} noValidate
           onSubmit={handleSubmit}
         >
-          
 
-          
+
+
 
           <TextField
             variant="outlined"
@@ -108,7 +108,7 @@ function Login({ setIsLoginForm }) {
 
 
 
-          
+
 
           <TextField
             variant="outlined"
@@ -142,11 +142,11 @@ function Login({ setIsLoginForm }) {
           <Grid container>
             <Grid item xs></Grid>
             <Grid item>
-              <p>Don't have an account? <a onClick={handleClick}> Sign Up!</a></p>
+              <p> Need an account? <a style={{ color: 'blue' }} onClick={handleClick}> Sign Up!</a></p>
             </Grid>
 
           </Grid>
-          
+
         </form>
       </div>
       <Box mt={8}>

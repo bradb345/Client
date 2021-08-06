@@ -189,7 +189,7 @@ function Register({ setIsLoginForm }) {
             Register Me!
           </Button>
 
-          <p>Already a user?<a onClick={handleClick}> Sign In</a></p>
+          <p>Already a user?<a style={{ color: 'blue' }} onClick={handleClick}> Sign In</a></p>
         </form>
       </div>
       <Box mt={5}>
