@@ -5,7 +5,7 @@ import { isAuthor } from '../lib/auth'
 
 import { faEnvelope, faPlusCircle, faCameraRetro, faCodeBranch, faBriefcase, faDesktop, faDove, faPlus, faSchool, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Card, CardContent, CardMedia, Grid, Button, Typography, Container } from '@material-ui/core'
+import { Card, CardMedia, Grid, Button, Typography, Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 // import { useParams } from 'react-router-dom'
 
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function UserCard({ id, profileImage, username, gacohort, github, linkedin, instagram, personalsite, twitter, userId }) {
+function UserCard({ id, profileImage, username  }) {
 
   // const { id } = useParams()
   const classes = useStyles()
@@ -105,12 +105,12 @@ function UserCard({ id, profileImage, username, gacohort, github, linkedin, inst
 
             <br />
             <div className="user-site-link">
-              {user && user.gacohort ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faSchool} /> Cohort  <a href={`http://${user && user.gacohort}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.gacohort || gacohort}</span></a></Typography> : <div />}
-              {user && user.github ? <Typography variant="h6" color="primary"><FontAwesomeIcon icon={faCodeBranch} /> Github<a href={`http://${user && user.github}`} target="_blank" rel="noopener noreferrer"></a></Typography> : <div />}
-              {user && user.linkedin ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faBriefcase} /> LinkedIn  <a href={`http://${user && user.linkedin}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.linkedin || linkedin}</span></a></Typography> : <div />}
-              {user && user.personalsite ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faDesktop} /> My Site  <a href={`http://${user && user.personalsite}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.personalsite || personalsite}</span></a></Typography> : <div />}
-              {user && user.twitter ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faDove} /> Twitter  <a href={`http://${user && user.twitter}`} target="_blank" rel="noopener noreferrer"><span>{user && user.twitter || twitter}</span></a></Typography> : <div />}
-              {user && user.instagram ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faCameraRetro} /> Instagram <a href={`http://${user && user.instagram}`} target="_blank" rel="noopener noreferrer"> <span>{user && user.instagram || instagram}</span></a></Typography> : <div />}
+              {user && user.gacohort ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faSchool} /> Cohort  <a href={`http://${user && user.gacohort}`} target="_blank" rel="noopener noreferrer"> </a></Typography> : <div />}
+              {user && user.github  ? <Typography variant="h6" color="primary"><FontAwesomeIcon icon={faCodeBranch} /> Github<a href={`http://${user && user.github}`} target="_blank" rel="noopener noreferrer"></a></Typography> : <div />}
+              {user && user.linkedin ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faBriefcase} /> LinkedIn  <a href={`http://${user && user.linkedin}`} target="_blank" rel="noopener noreferrer"> </a></Typography> : <div />}
+              {user && user.personalsite ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faDesktop} /> My Site  <a href={`http://${user && user.personalsite}`} target="_blank" rel="noopener noreferrer"> </a></Typography> : <div />}
+              {user && user.twitter ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faDove} /> Twitter  <a href={`http://${user && user.twitter}`} target="_blank" rel="noopener noreferrer"></a></Typography> : <div />}
+              {user && user.instagram ? <Typography variant="h7" color="primary"><FontAwesomeIcon icon={faCameraRetro} /> Instagram <a href={`http://${user && user.instagram}`} target="_blank" rel="noopener noreferrer"> </a></Typography> : <div />}
 
               
             </div>
